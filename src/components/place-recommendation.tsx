@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { Wand2, Loader2 } from 'lucide-react';
+import { Wand2, Loader2,Sparkles } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -27,6 +27,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { RecommendPlacesOfInterestOutput } from '@/ai/flows/recommend-places-of-interest';
 
 const formSchema = z.object({
   currentLocation: z.string().min(1, 'Current location is required.'),
@@ -41,7 +42,7 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 export function PlaceRecommendation() {
-  const [recommendations, setRecommendations] = useState<string | null>(null);
+  const [recommendations, setRecommendations] = useState<RecommendPlacesOfInterestOutput['recommendations'] | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
@@ -198,9 +199,17 @@ export function PlaceRecommendation() {
             </div>
           )}
           {recommendations && (
-            <div className="prose prose-lg max-w-none dark:prose-invert">
-              {recommendations.split('\n').filter(line => line.trim() !== '').map((line, index) => (
-                <p key={index}>{line}</p>
+            <div className="w-full space-y-6">
+              {recommendations.map((rec, index) => (
+                <div key={index} className="flex gap-4 items-start">
+                  <div className="bg-primary/10 p-3 rounded-full flex-shrink-0">
+                    <Sparkles className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold font-headline text-foreground">{rec.title}</h3>
+                    <p className="text-base text-muted-foreground">{rec.description}</p>
+                  </div>
+                </div>
               ))}
             </div>
           )}
