@@ -23,25 +23,25 @@ export default function TransportPage() {
         <div className="relative">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
           <Input placeholder="Search for transportation..." className="pl-10 h-12 text-base" />
-          <Button className="absolute right-2 top-1/2 -translate-y-1/2" variant="default">Search</Button>
+          <Button className="absolute right-2 top-1/2 -translate-y-1/2" variant="default" size="lg">Search</Button>
         </div>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {transportOptions.map((option) => {
             const placeholder = PlaceHolderImages.find(p => p.id === option.imageId);
             return (
-                <Card key={option.type} className="transition-shadow hover:shadow-lg">
+                <Card key={option.type} className="transition-shadow duration-300 hover:shadow-2xl hover:-translate-y-1">
                 <CardHeader className="flex flex-row items-center gap-4 pb-4">
-                    <div className="bg-primary/20 p-3 rounded-lg">
-                        <option.icon className="h-6 w-6 text-primary" />
+                    <div className="bg-primary/10 p-4 rounded-xl">
+                        <option.icon className="h-7 w-7 text-primary" />
                     </div>
                     <div>
-                        <CardTitle className="text-lg font-bold font-headline">{option.type}</CardTitle>
-                        <CardDescription>{option.details}</CardDescription>
+                        <CardTitle className="text-xl font-bold font-headline">{option.type}</CardTitle>
+                        <CardDescription className="text-base">{option.details}</CardDescription>
                     </div>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="px-5 pb-5">
                     {placeholder && (
-                        <div className="relative h-40 w-full overflow-hidden rounded-md">
+                        <div className="relative h-48 w-full overflow-hidden rounded-lg">
                             <Image
                             src={placeholder.imageUrl}
                             alt={placeholder.description}

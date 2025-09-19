@@ -62,6 +62,8 @@ export function MainNav() {
             href={link.href}
             isActive={pathname === link.href}
             tooltip={link.label}
+            size="lg"
+            className="font-medium"
           >
             <link.icon className="h-5 w-5" />
             <span>{link.label}</span>

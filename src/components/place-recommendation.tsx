@@ -17,7 +17,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { getRecommendations } from '@/app/actions';
 import { useToast } from '@/hooks/use-toast';
 import {
@@ -76,9 +76,10 @@ export function PlaceRecommendation() {
 
   return (
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-      <Card>
+      <Card className="border-2 border-primary/20 shadow-2xl">
         <CardHeader>
-          <CardTitle>Find Your Next Adventure</CardTitle>
+          <CardTitle className="text-2xl font-headline">Find Your Next Adventure</CardTitle>
+          <CardDescription>Fill in your details below to get personalized travel suggestions.</CardDescription>
         </CardHeader>
         <CardContent>
           <Form {...form}>
@@ -170,12 +171,12 @@ export function PlaceRecommendation() {
                 />
               </div>
 
-              <Button type="submit" disabled={isLoading} className="w-full" variant="default">
+              <Button type="submit" disabled={isLoading} size="lg" className="w-full text-lg h-12">
                 {isLoading ? (
                   <Loader2 className="animate-spin" />
                 ) : (
                   <>
-                    <Wand2 className="mr-2 h-4 w-4" /> Get Recommendations
+                    <Wand2 className="mr-2 h-5 w-5" /> Get Recommendations
                   </>
                 )}
               </Button>
@@ -183,29 +184,32 @@ export function PlaceRecommendation() {
           </Form>
         </CardContent>
       </Card>
-      <Card className="flex flex-col">
+      <Card className="flex flex-col bg-muted/30 shadow-2xl">
         <CardHeader>
-          <CardTitle>Your Personalized Suggestions</CardTitle>
+          <CardTitle className="text-2xl font-headline">Your Personalized Suggestions</CardTitle>
+           <CardDescription>Our AI is crafting the perfect itinerary for you.</CardDescription>
         </CardHeader>
-        <CardContent className="flex-grow">
+        <CardContent className="flex flex-grow items-center justify-center">
           {isLoading && (
-            <div className="flex h-full items-center justify-center">
-              <Loader2 className="h-8 w-8 animate-spin text-primary" />
+            <div className="flex h-full flex-col items-center justify-center w-full text-center">
+              <Loader2 className="h-12 w-12 animate-spin text-primary mb-4" />
+               <p className='text-lg font-medium text-foreground'>Generating recommendations...</p>
+              <p className="text-base text-muted-foreground">This may take a moment.</p>
             </div>
           )}
           {recommendations && (
-            <div className="space-y-3 text-sm text-foreground">
+            <div className="space-y-4 text-base text-foreground prose prose-lg max-w-none">
               {recommendations.split('\n').filter(line => line.trim() !== '').map((line, index) => (
                 <p key={index} className="leading-relaxed">{line}</p>
               ))}
             </div>
           )}
           {!isLoading && !recommendations && (
-            <div className="flex h-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-muted-foreground/30 p-8 text-center text-muted-foreground">
-              <Wand2 className="mb-4 h-12 w-12" />
-              <p className='font-medium'>Your travel recommendations will appear here.</p>
-              <p className="text-xs">
-                Fill out the form and let our AI do the magic!
+            <div className="flex h-full w-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-muted-foreground/30 p-8 text-center text-muted-foreground">
+              <Wand2 className="mb-4 h-16 w-16 text-primary" />
+              <p className='text-xl font-medium'>Your recommendations will appear here.</p>
+              <p className="text-base mt-2">
+                Fill out the form and let our AI magic happen!
               </p>
             </div>
           )}

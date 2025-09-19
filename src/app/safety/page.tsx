@@ -29,47 +29,53 @@ export default function SafetyPage() {
         description="Your guide to staying safe while you explore the world."
       />
       <div className="mt-8 grid gap-8 md:grid-cols-2">
-        <Card>
-            <CardHeader className="flex flex-row items-center gap-3">
-                <ShieldAlert className="h-6 w-6 text-primary" />
-                <CardTitle>Top Safety Tips</CardTitle>
+        <Card className="shadow-lg">
+            <CardHeader className="flex flex-row items-center gap-4">
+                <div className="bg-primary/10 p-3 rounded-xl">
+                    <ShieldAlert className="h-7 w-7 text-primary" />
+                </div>
+                <CardTitle className="text-xl">Top Safety Tips</CardTitle>
             </CardHeader>
             <CardContent>
                 <Accordion type="single" collapsible className="w-full">
                     {safetyTips.map((tip, index) => (
                         <AccordionItem value={`item-${index}`} key={index}>
-                            <AccordionTrigger>{tip.title}</AccordionTrigger>
-                            <AccordionContent>{tip.content}</AccordionContent>
+                            <AccordionTrigger className="text-base font-medium">{tip.title}</AccordionTrigger>
+                            <AccordionContent className="text-base">{tip.content}</AccordionContent>
                         </AccordionItem>
                     ))}
                 </Accordion>
             </CardContent>
         </Card>
         <div className="space-y-8">
-            <Card>
-                <CardHeader className="flex flex-row items-center gap-3">
-                    <Phone className="h-6 w-6 text-destructive" />
-                    <CardTitle>Emergency Contacts</CardTitle>
+            <Card className="shadow-lg">
+                <CardHeader className="flex flex-row items-center gap-4">
+                     <div className="bg-destructive/10 p-3 rounded-xl">
+                        <Phone className="h-7 w-7 text-destructive" />
+                    </div>
+                    <CardTitle className="text-xl">Emergency Contacts</CardTitle>
                 </CardHeader>
                 <CardContent>
-                    <ul className="space-y-3">
+                    <ul className="space-y-4">
                         {emergencyContacts.map((contact, index) => (
-                            <li key={index} className="flex justify-between items-center border-b pb-2">
+                            <li key={index} className="flex justify-between items-center border-b pb-3 text-base">
                                 <span className="font-medium">{contact.location}</span>
-                                <span className="text-sm text-muted-foreground">{contact.number}</span>
+                                <span className="font-mono text-muted-foreground">{contact.number}</span>
                             </li>
                         ))}
                     </ul>
                 </CardContent>
             </Card>
-            <Card>
-                <CardHeader className="flex flex-row items-center gap-3">
-                    <HeartPulse className="h-6 w-6 text-green-600" />
-                    <CardTitle>Local Alerts</CardTitle>
+            <Card className="shadow-lg">
+                <CardHeader className="flex flex-row items-center gap-4">
+                    <div className="bg-green-500/10 p-3 rounded-xl">
+                        <HeartPulse className="h-7 w-7 text-green-600" />
+                    </div>
+                    <CardTitle className="text-xl">Local Alerts</CardTitle>
                 </CardHeader>
                 <CardContent>
-                    <div className="bg-muted/50 p-4 rounded-lg text-center">
-                      <p className="text-muted-foreground">
+                    <div className="bg-muted/50 p-6 rounded-lg text-center">
+                      <p className="text-base text-muted-foreground">
                           No active alerts for your current location. Stay tuned for real-time updates.
                       </p>
                     </div>

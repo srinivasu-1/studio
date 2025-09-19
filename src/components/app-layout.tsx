@@ -43,10 +43,10 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
       <SidebarInset>
         <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b bg-background/80 px-4 backdrop-blur-sm sm:px-6">
           <SidebarTrigger />
-          <div className="flex-1 text-center">
+          <div className="flex items-center gap-4">
             <h1 className="text-xl font-semibold font-headline hidden sm:block">Trip Mate</h1>
+            <UserNav />
           </div>
-          <UserNav />
         </header>
         <main className="flex-1 p-4 sm:p-6">{children}</main>
       </SidebarInset>
