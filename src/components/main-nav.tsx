@@ -59,16 +59,13 @@ export function MainNav() {
         <SidebarMenuItem key={link.href}>
           <Link href={link.href}>
             <SidebarMenuButton
-              asChild
               isActive={pathname === link.href}
               tooltip={link.label}
               size="lg"
               className="font-medium"
             >
-              <div>
-                <link.icon className="h-5 w-5" />
-                <span>{link.label}</span>
-              </div>
+              <link.icon className="h-5 w-5" />
+              <span>{link.label}</span>
             </SidebarMenuButton>
           </Link>
         </SidebarMenuItem>
