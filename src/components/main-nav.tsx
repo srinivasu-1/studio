@@ -59,7 +59,6 @@ export function MainNav() {
         <SidebarMenuItem key={link.href}>
           <Link href={link.href} passHref>
             <SidebarMenuButton
-              as="a"
               isActive={pathname === link.href}
               tooltip={link.label}
               size="lg"
