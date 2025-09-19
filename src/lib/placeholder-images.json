@@ -59,6 +59,12 @@
       "description": "An Indian Railways train at a station",
       "imageUrl": "https://picsum.photos/seed/10/600/400",
       "imageHint": "Indian train"
+    },
+    {
+      "id": "navigation-route-line",
+      "description": "A stylized line representing a travel route on a map",
+      "imageUrl": "https://picsum.photos/seed/11/1200/800",
+      "imageHint": "route line"
     }
   ]
 }
