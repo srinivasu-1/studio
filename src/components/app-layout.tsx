@@ -29,7 +29,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
   }, []);
 
   if (pathname === '/login') {
-    return <main className="flex-1 bg-background">{children}</main>;
+    return <main className="flex-1">{children}</main>;
   }
 
   return (
@@ -51,8 +51,8 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
           <SidebarTrigger />
           <div className="flex items-center gap-4">
             <h1 className="text-xl font-semibold font-headline hidden sm:block">Trip Mate</h1>
-            <UserNav />
           </div>
+          <UserNav />
         </header>
         <main className="flex-1 p-4 sm:p-6">{children}</main>
       </SidebarInset>
