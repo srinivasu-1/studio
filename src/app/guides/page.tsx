@@ -5,9 +5,9 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 
 const guides = [
-  { id: 1, title: 'A Guide to Paris', description: 'Discover the city of lights, from the Eiffel Tower to hidden gems.', imageId: 'guide-eiffel' },
-  { id: 2, title: 'Ancient Rome Revealed', description: 'Walk through history at the Colosseum, Forum, and more.', imageId: 'guide-colosseum' },
-  { id: 3, title: 'The Wonders of Mount Fuji', description: 'Everything you need to know about Japan\'s iconic peak.', imageId: 'guide-fuji' },
+  { id: 1, title: 'Guide to the Taj Mahal', description: 'Discover the history and beauty of the iconic symbol of love in Agra.', imageId: 'guide-taj-mahal' },
+  { id: 2, title: 'Exploring Jaipur\'s Palaces', description: 'A tour of the Pink City\'s majestic forts and royal residences.', imageId: 'guide-jaipur' },
+  { id: 3, title: 'Varanasi & the Ganges', description: 'Experience the spiritual heart of India along the sacred river.', imageId: 'guide-varanasi' },
 ];
 
 export default function GuidesPage() {

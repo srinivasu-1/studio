@@ -10,7 +10,7 @@ export default function NavigationPage() {
     <>
       <PageHeader
         title="Navigation Portal"
-        description="Find your way, online or offline."
+        description="Find your way across India, online or offline."
       />
       <Card className="mt-8">
         <CardContent className="p-4">

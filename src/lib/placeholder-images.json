@@ -1,64 +1,64 @@
 {
   "placeholderImages": [
     {
-      "id": "trip-1",
-      "description": "View of Santorini with white buildings and blue domes",
+      "id": "trip-delhi-agra-jaipur",
+      "description": "A collage of the India Gate, Taj Mahal, and Hawa Mahal",
       "imageUrl": "https://picsum.photos/seed/1/600/400",
-      "imageHint": "Santorini Greece"
+      "imageHint": "India collage"
     },
     {
-      "id": "trip-2",
-      "description": "Tokyo skyline at night with city lights",
+      "id": "trip-kerala",
+      "description": "A houseboat on the Kerala backwaters at sunset",
       "imageUrl": "https://picsum.photos/seed/2/600/400",
-      "imageHint": "Tokyo Japan"
+      "imageHint": "Kerala backwaters"
     },
     {
-      "id": "trip-3",
-      "description": "Snowy mountains in the Alps with a clear blue sky",
+      "id": "trip-himalayas",
+      "description": "Snow-capped Himalayan mountains with a trekking path",
       "imageUrl": "https://picsum.photos/seed/3/600/400",
-      "imageHint": "Alps mountains"
+      "imageHint": "Himalayan mountains"
     },
     {
-      "id": "guide-eiffel",
-      "description": "Eiffel Tower in Paris",
+      "id": "guide-taj-mahal",
+      "description": "The Taj Mahal in Agra at sunrise",
       "imageUrl": "https://picsum.photos/seed/4/600/400",
-      "imageHint": "Eiffel Tower"
+      "imageHint": "Taj Mahal"
     },
     {
-      "id": "guide-colosseum",
-      "description": "The Colosseum in Rome",
+      "id": "guide-jaipur",
+      "description": "Hawa Mahal in the Pink City of Jaipur",
       "imageUrl": "https://picsum.photos/seed/5/600/400",
-      "imageHint": "Colosseum Rome"
+      "imageHint": "Hawa Mahal"
     },
     {
-      "id": "guide-fuji",
-      "description": "Mount Fuji in Japan",
+      "id": "guide-varanasi",
+      "description": "Ghats along the Ganges river in Varanasi during a ceremony",
       "imageUrl": "https://picsum.photos/seed/6/600/400",
-      "imageHint": "Mount Fuji"
+      "imageHint": "Varanasi ghats"
     },
     {
       "id": "navigation-map",
-      "description": "A stylized world map",
+      "description": "A stylized map of India",
       "imageUrl": "https://picsum.photos/seed/7/1200/800",
-      "imageHint": "world map"
+      "imageHint": "India map"
     },
     {
       "id": "transport-bus",
-      "description": "A modern city bus on a street",
+      "description": "A modern city bus on a street in India",
       "imageUrl": "https://picsum.photos/seed/8/600/400",
-      "imageHint": "city bus"
+      "imageHint": "India bus"
     },
     {
       "id": "transport-taxi",
-      "description": "A yellow taxi cab in a city",
+      "description": "A classic yellow and black taxi cab in Mumbai",
       "imageUrl": "https://picsum.photos/seed/9/600/400",
-      "imageHint": "taxi cab"
+      "imageHint": "Mumbai taxi"
     },
     {
       "id": "transport-train",
-      "description": "A high-speed train on a railway",
+      "description": "An Indian Railways train at a station",
       "imageUrl": "https://picsum.photos/seed/10/600/400",
-      "imageHint": "high-speed train"
+      "imageHint": "Indian train"
     }
   ]
 }

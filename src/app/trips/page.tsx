@@ -6,9 +6,9 @@ import { PlusCircle } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const trips = [
-  { id: 1, title: 'Summer in Santorini', dates: 'June 10 - June 20, 2024', imageId: 'trip-1' },
-  { id: 2, title: 'Tokyo Adventure', dates: 'September 5 - September 15, 2024', imageId: 'trip-2' },
-  { id: 3, title: 'Exploring the Alps', dates: 'December 20 - December 30, 2024', imageId: 'trip-3' },
+  { id: 1, title: 'Golden Triangle Delight', dates: 'October 10 - October 17, 2024', imageId: 'trip-delhi-agra-jaipur' },
+  { id: 2, title: 'Kerala Backwater Bliss', dates: 'November 5 - November 12, 2024', imageId: 'trip-kerala' },
+  { id: 3, title: 'Himalayan Adventure', dates: 'March 20 - March 30, 2025', imageId: 'trip-himalayas' },
 ];
 
 export default function TripsPage() {
