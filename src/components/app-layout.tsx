@@ -44,7 +44,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
         <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b bg-background/80 px-4 backdrop-blur-sm sm:px-6">
           <SidebarTrigger />
           <div className="flex-1 text-center">
-            <h1 className="text-xl font-semibold font-headline hidden sm:block">RoamWise</h1>
+            <h1 className="text-xl font-semibold font-headline hidden sm:block">Trip Mate</h1>
           </div>
           <UserNav />
         </header>

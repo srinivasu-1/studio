@@ -4,8 +4,8 @@ import { AppLayout } from '@/components/app-layout';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'RoamWise',
-  description: 'Your wise travel companion.',
+  title: 'Trip Mate',
+  description: 'Your friendly travel companion.',
 };
 
 export default function RootLayout({
