@@ -1,3 +1,64 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "trip-1",
+      "description": "View of Santorini with white buildings and blue domes",
+      "imageUrl": "https://picsum.photos/seed/1/600/400",
+      "imageHint": "Santorini Greece"
+    },
+    {
+      "id": "trip-2",
+      "description": "Tokyo skyline at night with city lights",
+      "imageUrl": "https://picsum.photos/seed/2/600/400",
+      "imageHint": "Tokyo Japan"
+    },
+    {
+      "id": "trip-3",
+      "description": "Snowy mountains in the Alps with a clear blue sky",
+      "imageUrl": "https://picsum.photos/seed/3/600/400",
+      "imageHint": "Alps mountains"
+    },
+    {
+      "id": "guide-eiffel",
+      "description": "Eiffel Tower in Paris",
+      "imageUrl": "https://picsum.photos/seed/4/600/400",
+      "imageHint": "Eiffel Tower"
+    },
+    {
+      "id": "guide-colosseum",
+      "description": "The Colosseum in Rome",
+      "imageUrl": "https://picsum.photos/seed/5/600/400",
+      "imageHint": "Colosseum Rome"
+    },
+    {
+      "id": "guide-fuji",
+      "description": "Mount Fuji in Japan",
+      "imageUrl": "https://picsum.photos/seed/6/600/400",
+      "imageHint": "Mount Fuji"
+    },
+    {
+      "id": "navigation-map",
+      "description": "A stylized world map",
+      "imageUrl": "https://picsum.photos/seed/7/1200/800",
+      "imageHint": "world map"
+    },
+    {
+      "id": "transport-bus",
+      "description": "A modern city bus on a street",
+      "imageUrl": "https://picsum.photos/seed/8/600/400",
+      "imageHint": "city bus"
+    },
+    {
+      "id": "transport-taxi",
+      "description": "A yellow taxi cab in a city",
+      "imageUrl": "https://picsum.photos/seed/9/600/400",
+      "imageHint": "taxi cab"
+    },
+    {
+      "id": "transport-train",
+      "description": "A high-speed train on a railway",
+      "imageUrl": "https://picsum.photos/seed/10/600/400",
+      "imageHint": "high-speed train"
+    }
+  ]
 }
