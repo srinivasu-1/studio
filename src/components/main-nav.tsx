@@ -57,16 +57,18 @@ export function MainNav() {
     <SidebarMenu>
       {links.map((link) => (
         <SidebarMenuItem key={link.href}>
-          <Link href={link.href} passHref legacyBehavior>
+          <Link href={link.href}>
             <SidebarMenuButton
-              as="a"
+              asChild
               isActive={pathname === link.href}
               tooltip={link.label}
               size="lg"
               className="font-medium"
             >
-              <link.icon className="h-5 w-5" />
-              <span>{link.label}</span>
+              <div>
+                <link.icon className="h-5 w-5" />
+                <span>{link.label}</span>
+              </div>
             </SidebarMenuButton>
           </Link>
         </SidebarMenuItem>
