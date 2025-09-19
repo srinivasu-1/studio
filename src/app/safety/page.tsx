@@ -16,9 +16,10 @@ const safetyTips = [
 ];
 
 const emergencyContacts = [
-    { location: "Local Police", number: "112 / 911 (check local)" },
-    { location: "Ambulance / Medical", number: "112 / 911 (check local)" },
-    { location: "Your Embassy/Consulate", number: "Varies by location" },
+    { location: "National Emergency Helpline", number: "112" },
+    { location: "Police", number: "100" },
+    { location: "Ambulance", number: "102" },
+    { location: "Women Helpline", number: "1091" },
 ]
 
 export default function SafetyPage() {
