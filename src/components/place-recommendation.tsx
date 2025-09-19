@@ -48,10 +48,10 @@ export function PlaceRecommendation() {
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      currentLocation: 'Paris, France',
-      pastTravelHistory: 'Beach vacations, historical sites in Italy and Greece.',
-      statedPreferences: 'Interested in art museums, quiet cafes, and scenic walks.',
-      realTimeWeatherConditions: 'Sunny, 22°C',
+      currentLocation: 'Delhi, India',
+      pastTravelHistory: 'Weekend trips to hill stations, visited historical sites in Rajasthan.',
+      statedPreferences: 'Interested in local cuisine, vibrant markets, and spiritual places.',
+      realTimeWeatherConditions: 'Clear sky, 32°C',
       timeOfDay: 'Afternoon',
     },
   });
@@ -79,7 +79,7 @@ export function PlaceRecommendation() {
       <Card className="border-2 border-primary/20 shadow-2xl">
         <CardHeader>
           <CardTitle className="text-2xl font-headline">Find Your Next Adventure</CardTitle>
-          <CardDescription>Fill in your details below to get personalized travel suggestions.</CardDescription>
+          <CardDescription>Fill in your details below to get personalized travel suggestions within India.</CardDescription>
         </CardHeader>
         <CardContent>
           <Form {...form}>
@@ -91,7 +91,7 @@ export function PlaceRecommendation() {
                   <FormItem>
                     <FormLabel>Current Location</FormLabel>
                     <FormControl>
-                      <Input placeholder="e.g., Paris, France" {...field} />
+                      <Input placeholder="e.g., Mumbai, India" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -105,7 +105,7 @@ export function PlaceRecommendation() {
                     <FormLabel>Past Travel History</FormLabel>
                     <FormControl>
                       <Textarea
-                        placeholder="e.g., Beach vacations, historical sites..."
+                        placeholder="e.g., Visited Goa for beaches, explored temples in South India..."
                         {...field}
                       />
                     </FormControl>
@@ -121,7 +121,7 @@ export function PlaceRecommendation() {
                     <FormLabel>Your Preferences</FormLabel>
                     <FormControl>
                       <Textarea
-                        placeholder="e.g., Art museums, quiet cafes..."
+                        placeholder="e.g., Street food, hiking, cultural festivals..."
                         {...field}
                       />
                     </FormControl>
@@ -137,7 +137,7 @@ export function PlaceRecommendation() {
                     <FormItem>
                       <FormLabel>Weather</FormLabel>
                       <FormControl>
-                        <Input placeholder="e.g., Sunny, 22°C" {...field} />
+                        <Input placeholder="e.g., Sunny, 35°C" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -187,7 +187,7 @@ export function PlaceRecommendation() {
       <Card className="flex flex-col bg-muted/30 shadow-2xl">
         <CardHeader>
           <CardTitle className="text-2xl font-headline">Your Personalized Suggestions</CardTitle>
-           <CardDescription>Our AI is crafting the perfect itinerary for you.</CardDescription>
+           <CardDescription>Our AI is crafting the perfect itinerary for you in India.</CardDescription>
         </CardHeader>
         <CardContent className="flex flex-grow items-center justify-center">
           {isLoading && (
