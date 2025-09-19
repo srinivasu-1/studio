@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -12,14 +13,13 @@ import { ArrowRight, MapPin } from 'lucide-react';
 export default function NavigationPage() {
   const [start, setStart] = useState('Mumbai');
   const [end, setEnd] = useState('Delhi');
-  const [showRoute, setShowRoute] = useState(false);
 
   const mapImage = PlaceHolderImages.find(p => p.id === 'navigation-map');
-  const routeImage = PlaceHolderImages.find(p => p.id === 'navigation-route-line');
 
   const handleGetDirections = () => {
     if (start && end) {
-      setShowRoute(true);
+      const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(start)}&destination=${encodeURIComponent(end)}`;
+      window.open(googleMapsUrl, '_blank');
     }
   };
 
@@ -42,7 +42,7 @@ export default function NavigationPage() {
                                     placeholder="Starting point" 
                                     className="pl-10 h-12 text-base" 
                                     value={start}
-                                    onChange={(e) => { setStart(e.target.value); setShowRoute(false); }}
+                                    onChange={(e) => setStart(e.target.value)}
                                 />
                             </div>
                             <div className="relative">
@@ -51,7 +51,7 @@ export default function NavigationPage() {
                                     placeholder="Destination" 
                                     className="pl-10 h-12 text-base"
                                     value={end}
-                                    onChange={(e) => { setEnd(e.target.value); setShowRoute(false); }}
+                                    onChange={(e) => setEnd(e.target.value)}
                                 />
                             </div>
                         </div>
@@ -76,27 +76,10 @@ export default function NavigationPage() {
                         data-ai-hint={mapImage.imageHint}
                         />
                     )}
-                    {showRoute && routeImage && (
-                        <Image
-                            src={routeImage.imageUrl}
-                            alt={routeImage.description}
-                            fill
-                            className="object-contain"
-                            data-ai-hint={routeImage.imageHint}
-                        />
-                    )}
                 </div>
-                {showRoute && (
-                    <p className="mt-4 text-center text-lg font-medium text-foreground">
-                        Displaying route from <span className="text-primary">{start}</span> to <span className="text-primary">{end}</span>.
-                    </p>
-                )}
-                 {!showRoute && (
-                    <p className="mt-4 text-center text-muted-foreground">
-                        Enter a starting point and destination to see your route.
-                    </p>
-                )}
-
+                <p className="mt-4 text-center text-muted-foreground">
+                    Enter a starting point and destination to get directions on Google Maps.
+                </p>
                 </CardContent>
             </Card>
         </div>
