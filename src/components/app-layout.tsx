@@ -12,10 +12,12 @@ import { MainNav } from '@/components/main-nav';
 import { AppLogo } from '@/components/app-logo';
 import { UserNav } from '@/components/user-nav';
 import React from 'react';
+import { usePathname } from 'next/navigation';
 
 export function AppLayout({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = React.useState(true);
-  
+  const pathname = usePathname();
+
   React.useEffect(() => {
     const cookieValue = document.cookie
       .split('; ')
@@ -25,6 +27,10 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
       setOpen(cookieValue === 'true');
     }
   }, []);
+
+  if (pathname === '/login') {
+    return <main className="flex-1 bg-background">{children}</main>;
+  }
 
   return (
     <SidebarProvider open={open} onOpenChange={setOpen}>
