@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import {
   SidebarProvider,
   Sidebar,
@@ -37,7 +38,9 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
       <Sidebar>
         <SidebarHeader className="p-4">
           <div className="flex items-center justify-between">
-            <AppLogo />
+            <Link href="/">
+              <AppLogo />
+            </Link>
           </div>
         </SidebarHeader>
         <SidebarContent>
