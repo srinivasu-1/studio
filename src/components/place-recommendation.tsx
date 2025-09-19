@@ -198,9 +198,9 @@ export function PlaceRecommendation() {
             </div>
           )}
           {recommendations && (
-            <div className="space-y-4 text-base text-foreground prose prose-lg max-w-none">
+            <div className="prose prose-lg max-w-none dark:prose-invert">
               {recommendations.split('\n').filter(line => line.trim() !== '').map((line, index) => (
-                <p key={index} className="leading-relaxed">{line}</p>
+                <p key={index}>{line}</p>
               ))}
             </div>
           )}

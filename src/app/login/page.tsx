@@ -7,8 +7,10 @@ import Link from 'next/link';
 
 export default function LoginPage() {
   return (
-    <div className="flex min-h-[calc(100vh-4rem)] items-center justify-center p-4">
-      <Card className="mx-auto w-full max-w-sm shadow-2xl">
+    <div className="flex min-h-screen items-center justify-center bg-background p-4">
+      <div className="absolute inset-0 bg-cover bg-center opacity-20' style={{backgroundImage: 'url(https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=2071&auto=format&fit=crop)'}} data-ai-hint='India landmark'></div>
+      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm"></div>
+      <Card className="relative z-10 mx-auto w-full max-w-sm shadow-2xl">
         <CardHeader className="text-center">
           <div className="mb-4 flex justify-center">
             <AppLogo />

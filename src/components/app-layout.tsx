@@ -29,7 +29,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
   }, []);
 
   if (pathname === '/login') {
-    return <main className="flex-1">{children}</main>;
+    return <main>{children}</main>;
   }
 
   return (

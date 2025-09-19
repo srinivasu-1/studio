@@ -11,7 +11,7 @@ export default function Home() {
           style={{backgroundImage: "url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=2071&auto=format&fit=crop')"}}
           data-ai-hint="India landmark"
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
         <div className="relative z-10">
           <h1 className="text-4xl font-bold tracking-tight font-headline md:text-6xl text-foreground">
             Discover Your Next Adventure in India

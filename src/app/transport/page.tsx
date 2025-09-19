@@ -23,7 +23,7 @@ export default function TransportPage() {
         <div className="relative">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
           <Input placeholder="Search for transportation..." className="pl-10 h-12 text-base" />
-          <Button className="absolute right-2 top-1/2 -translate-y-1/2" variant="default" size="lg">Search</Button>
+          <Button className="absolute right-1 top-1/2 -translate-y-1/2 h-10 px-4" variant="default">Search</Button>
         </div>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {transportOptions.map((option) => {
