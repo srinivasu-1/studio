@@ -12,16 +12,22 @@ import { useTranslation } from '@/hooks/use-translation';
 import { Motorcycle } from '@/components/icons/motorcycle';
 
 const transportOptions = [
-  { type: 'Bus', icon: Bus, details: 'Local routes and schedules.', imageId: 'transport-bus' },
-  { type: 'Taxi/Rideshare', icon: Car, details: 'Find a ride quickly.', imageId: 'transport-taxi' },
-  { type: 'Train', icon: Train, details: 'Regional & long-distance.', imageId: 'transport-train' },
-  { type: 'Uber', icon: Car, details: 'Book a ride instantly.', imageId: 'transport-uber' },
-  { type: 'Ola', icon: Car, details: 'Your local ride-hailing app.', imageId: 'transport-ola' },
-  { type: 'Rapido', icon: Motorcycle, details: 'Quick bike taxi services.', imageId: 'transport-rapido' },
+  { type: 'Bus', icon: Bus, details: 'Local routes and schedules.', imageId: 'transport-bus', query: 'bus station' },
+  { type: 'Taxi/Rideshare', icon: Car, details: 'Find a ride quickly.', imageId: 'transport-taxi', query: 'taxi stand' },
+  { type: 'Train', icon: Train, details: 'Regional & long-distance.', imageId: 'transport-train', query: 'train station' },
+  { type: 'Uber', icon: Car, details: 'Book a ride instantly.', imageId: 'transport-uber', query: 'Uber' },
+  { type: 'Ola', icon: Car, details: 'Your local ride-hailing app.', imageId: 'transport-ola', query: 'Ola Cabs' },
+  { type: 'Rapido', icon: Motorcycle, details: 'Quick bike taxi services.', imageId: 'transport-rapido', query: 'Rapido bike taxi' },
 ];
 
 export default function TransportPage() {
   const { t } = useTranslation();
+
+  const handleTransportSearch = (query: string) => {
+    const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+    window.open(googleSearchUrl, '_blank');
+  };
+
   return (
     <>
       <PageHeader
@@ -38,7 +44,11 @@ export default function TransportPage() {
           {transportOptions.map((option) => {
             const placeholder = PlaceHolderImages.find(p => p.id === option.imageId);
             return (
-                <Card key={option.type} className="transition-shadow duration-300 hover:shadow-2xl hover:-translate-y-1">
+                <Card 
+                  key={option.type} 
+                  className="transition-shadow duration-300 hover:shadow-2xl hover:-translate-y-1 cursor-pointer"
+                  onClick={() => handleTransportSearch(option.query)}
+                >
                 <CardHeader className="flex flex-row items-center gap-4 pb-4">
                     <div className="bg-primary/10 p-4 rounded-xl">
                         <option.icon className="h-7 w-7 text-primary" />
