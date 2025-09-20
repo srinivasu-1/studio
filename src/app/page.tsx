@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Camera, Route } from 'lucide-react';
 import Link from 'next/link';
+import { BookingPortal } from '@/components/booking-portal';
 
 export default function Home() {
   return (
@@ -23,6 +24,10 @@ export default function Home() {
           </p>
         </div>
       </section>
+
+      <div id="booking-portal">
+        <BookingPortal />
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <Card className="flex flex-col text-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
