@@ -65,6 +65,24 @@
       "description": "A stylized line representing a travel route on a map",
       "imageUrl": "https://picsum.photos/seed/11/1200/800",
       "imageHint": "route line"
+    },
+    {
+      "id": "transport-uber",
+      "description": "A car with a ridesharing app logo",
+      "imageUrl": "https://picsum.photos/seed/12/600/400",
+      "imageHint": "ridesharing app"
+    },
+    {
+      "id": "transport-ola",
+      "description": "A car with a local Indian ridesharing app logo",
+      "imageUrl": "https://picsum.photos/seed/13/600/400",
+      "imageHint": "Indian ridesharing"
+    },
+    {
+      "id": "transport-rapido",
+      "description": "A person riding a bike taxi in a bustling city",
+      "imageUrl": "https://picsum.photos/seed/14/600/400",
+      "imageHint": "bike taxi"
     }
   ]
 }
