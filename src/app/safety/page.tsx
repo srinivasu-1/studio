@@ -20,6 +20,8 @@ const emergencyContacts = [
     { location: "Police", number: "100" },
     { location: "Ambulance", number: "102" },
     { location: "Women Helpline", number: "1091" },
+    { location: "Tour Guide Dispatch", number: "987-654-3210" },
+    { location: "Local Guide Support", number: "987-654-3211" },
 ]
 
 export default function SafetyPage() {
