@@ -1,0 +1,19 @@
+
+{
+    "home": {
+        "hero": {
+            "title": "Tu Viaje, Reinventado",
+            "description": "Desde crear el itinerario perfecto hasta conservar tus preciados recuerdos, Trip Mate está contigo en cada paso del camino."
+        },
+        "plan": {
+            "title": "Planifica un Viaje",
+            "description": "Deja que nuestra IA encuentre los lugares perfectos para ti. Solo dinos tus preferencias y nosotros nos encargamos del resto.",
+            "button": "Empezar"
+        },
+        "capture": {
+            "title": "Captura tu Viaje",
+            "description": "Crea un hermoso diario visual de tus viajes. Sube fotos y deja que nuestra IA cuente tu historia.",
+            "button": "Empezar a Capturar"
+        }
+    }
+}

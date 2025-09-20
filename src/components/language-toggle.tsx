@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -10,8 +11,20 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { useLanguage } from "@/context/language-context"
+
+const languages = [
+    { code: 'en', name: 'English' },
+    { code: 'es', name: 'Español' },
+    { code: 'fr', name: 'Français' },
+    { code: 'hi', name: 'हिन्दी' },
+    { code: 'te', name: 'తెలుగు' },
+    { code: 'ta', name: 'தமிழ்' },
+    { code: 'ml', name: 'മലയാളം' },
+]
 
 export function LanguageToggle() {
+  const { setLanguage } = useLanguage();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -21,27 +34,11 @@ export function LanguageToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem>
-          English
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          Español
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          Français
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          हिन्दी
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          తెలుగు
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          தமிழ்
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          മലയാളം
-        </DropdownMenuItem>
+        {languages.map((lang) => (
+            <DropdownMenuItem key={lang.code} onClick={() => setLanguage(lang.code)}>
+                {lang.name}
+            </DropdownMenuItem>
+        ))}
       </DropdownMenuContent>
     </DropdownMenu>
   )
