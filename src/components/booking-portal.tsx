@@ -39,9 +39,7 @@ export function BookingPortal() {
   };
 
   const handleSearchCars = () => {
-    const pickup = carPickupDate ? format(carPickupDate, 'yyyy-MM-dd') : '';
-    const dropoff = carDropoffDate ? format(carDropoffDate, 'yyyy-MM-dd') : '';
-    const url = `https://www.google.com/travel/search?q=car%20rental%20in%20${carPickup}&entity=ChYI____________CRASFwoJL20vMDFfaDcQBGRhaXJvemFuGAE&ved=0CAAQ5JsGahcKEwjQjLqH9seDAQAAAAAHQAAAAAQaA&ts=CAESCAoCCAMKAggDGhoYagsQCgcyA2FpchIDCgEoCgcyA2FpchIDCgEoAg`;
+    const url = `https://www.google.com/travel/search?q=car%20rental%20in%20${carPickup}`;
     window.open(url, '_blank');
   };
 

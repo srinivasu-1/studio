@@ -76,154 +76,156 @@ export function PlaceRecommendation() {
   }
 
   return (
-    <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-      <Card className="border-2 border-primary/20 shadow-2xl">
+    <Card className="border-2 border-primary/20 shadow-2xl">
         <CardHeader>
           <CardTitle className="text-2xl font-headline">Find Your Next Adventure</CardTitle>
           <CardDescription>Fill in your details below to get personalized travel suggestions within India.</CardDescription>
         </CardHeader>
         <CardContent>
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <FormField
-                control={form.control}
-                name="currentLocation"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Current Location</FormLabel>
-                    <FormControl>
-                      <Input placeholder="e.g., Mumbai, India" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="pastTravelHistory"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Past Travel History</FormLabel>
-                    <FormControl>
-                      <Textarea
-                        placeholder="e.g., Visited Goa for beaches, explored temples in South India..."
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="statedPreferences"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Your Preferences</FormLabel>
-                    <FormControl>
-                      <Textarea
-                        placeholder="e.g., Street food, hiking, cultural festivals..."
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <FormField
-                  control={form.control}
-                  name="realTimeWeatherConditions"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Weather</FormLabel>
-                      <FormControl>
-                        <Input placeholder="e.g., Sunny, 35°C" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="timeOfDay"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Time of Day</FormLabel>
-                      <Select
-                        onValueChange={field.onChange}
-                        defaultValue={field.value}
-                      >
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+            <div>
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                  <FormField
+                    control={form.control}
+                    name="currentLocation"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Current Location</FormLabel>
                         <FormControl>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select a time" />
-                          </SelectTrigger>
+                          <Input placeholder="e.g., Mumbai, India" {...field} />
                         </FormControl>
-                        <SelectContent>
-                          <SelectItem value="Morning">Morning</SelectItem>
-                          <SelectItem value="Afternoon">Afternoon</SelectItem>
-                          <SelectItem value="Evening">Evening</SelectItem>
-                          <SelectItem value="Night">Night</SelectItem>
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="pastTravelHistory"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Past Travel History</FormLabel>
+                        <FormControl>
+                          <Textarea
+                            placeholder="e.g., Visited Goa for beaches, explored temples in South India..."
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="statedPreferences"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Your Preferences</FormLabel>
+                        <FormControl>
+                          <Textarea
+                            placeholder="e.g., Street food, hiking, cultural festivals..."
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <FormField
+                      control={form.control}
+                      name="realTimeWeatherConditions"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Weather</FormLabel>
+                          <FormControl>
+                            <Input placeholder="e.g., Sunny, 35°C" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="timeOfDay"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Time of Day</FormLabel>
+                          <Select
+                            onValueChange={field.onChange}
+                            defaultValue={field.value}
+                          >
+                            <FormControl>
+                              <SelectTrigger>
+                                <SelectValue placeholder="Select a time" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              <SelectItem value="Morning">Morning</SelectItem>
+                              <SelectItem value="Afternoon">Afternoon</SelectItem>
+                              <SelectItem value="Evening">Evening</SelectItem>
+                              <SelectItem value="Night">Night</SelectItem>
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
 
-              <Button type="submit" disabled={isLoading} size="lg" className="w-full text-lg h-12">
-                {isLoading ? (
-                  <Loader2 className="animate-spin" />
-                ) : (
-                  <>
-                    <Wand2 className="mr-2 h-5 w-5" /> Get Recommendations
-                  </>
-                )}
-              </Button>
-            </form>
-          </Form>
-        </CardContent>
-      </Card>
-      <Card className="flex flex-col bg-muted/30 shadow-2xl">
-        <CardHeader>
-          <CardTitle className="text-2xl font-headline">Your Personalized Suggestions</CardTitle>
-           <CardDescription>Our AI is crafting the perfect itinerary for you in India.</CardDescription>
-        </CardHeader>
-        <CardContent className="flex flex-grow items-center justify-center">
-          {isLoading && (
-            <div className="flex h-full flex-col items-center justify-center w-full text-center">
-              <Loader2 className="h-12 w-12 animate-spin text-primary mb-4" />
-               <p className='text-lg font-medium text-foreground'>Generating recommendations...</p>
-              <p className="text-base text-muted-foreground">This may take a moment.</p>
+                  <Button type="submit" disabled={isLoading} size="lg" className="w-full text-lg h-12">
+                    {isLoading ? (
+                      <Loader2 className="animate-spin" />
+                    ) : (
+                      <>
+                        <Wand2 className="mr-2 h-5 w-5" /> Get Recommendations
+                      </>
+                    )}
+                  </Button>
+                </form>
+              </Form>
             </div>
-          )}
-          {recommendations && (
-            <div className="w-full space-y-6">
-              {recommendations.map((rec, index) => (
-                <div key={index} className="flex gap-4 items-start">
-                  <div className="bg-primary/10 p-3 rounded-full flex-shrink-0">
-                    <Sparkles className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold font-headline text-foreground">{rec.title}</h3>
-                    <p className="text-base text-muted-foreground">{rec.description}</p>
-                  </div>
+            <div className="flex flex-col bg-muted/30 rounded-xl">
+                <div className="p-6">
+                    <h3 className="text-2xl font-headline">Your Personalized Suggestions</h3>
+                    <p className="text-base text-muted-foreground">Our AI is crafting the perfect itinerary for you in India.</p>
                 </div>
-              ))}
+                <div className="flex flex-grow items-center justify-center p-6 pt-0">
+                {isLoading && (
+                    <div className="flex h-full flex-col items-center justify-center w-full text-center">
+                    <Loader2 className="h-12 w-12 animate-spin text-primary mb-4" />
+                    <p className='text-lg font-medium text-foreground'>Generating recommendations...</p>
+                    <p className="text-base text-muted-foreground">This may take a moment.</p>
+                    </div>
+                )}
+                {recommendations && (
+                    <div className="w-full space-y-6">
+                    {recommendations.map((rec, index) => (
+                        <div key={index} className="flex gap-4 items-start">
+                        <div className="bg-primary/10 p-3 rounded-full flex-shrink-0">
+                            <Sparkles className="h-5 w-5 text-primary" />
+                        </div>
+                        <div>
+                            <h3 className="text-lg font-bold font-headline text-foreground">{rec.title}</h3>
+                            <p className="text-base text-muted-foreground">{rec.description}</p>
+                        </div>
+                        </div>
+                    ))}
+                    </div>
+                )}
+                {!isLoading && !recommendations && (
+                    <div className="flex h-full w-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-muted-foreground/30 p-8 text-center text-muted-foreground">
+                    <Wand2 className="mb-4 h-16 w-16 text-primary" />
+                    <p className='text-xl font-medium'>Your recommendations will appear here.</p>
+                    <p className="text-base mt-2">
+                        Fill out the form and let our AI magic happen!
+                    </p>
+                    </div>
+                )}
+                </div>
             </div>
-          )}
-          {!isLoading && !recommendations && (
-            <div className="flex h-full w-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-muted-foreground/30 p-8 text-center text-muted-foreground">
-              <Wand2 className="mb-4 h-16 w-16 text-primary" />
-              <p className='text-xl font-medium'>Your recommendations will appear here.</p>
-              <p className="text-base mt-2">
-                Fill out the form and let our AI magic happen!
-              </p>
-            </div>
-          )}
-        </CardContent>
-      </Card>
-    </div>
+        </div>
+      </CardContent>
+    </Card>
   );
 }

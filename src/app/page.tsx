@@ -25,9 +25,9 @@ export default function Home() {
         </div>
       </section>
 
-      <div id="booking-portal">
+      <section id="booking-portal">
         <BookingPortal />
-      </div>
+      </section>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <Card className="flex flex-col text-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
@@ -64,9 +64,9 @@ export default function Home() {
         </Card>
       </div>
 
-      <div id="recommendations">
+      <section id="recommendations">
         <PlaceRecommendation />
-      </div>
+      </section>
     </div>
   );
 }
