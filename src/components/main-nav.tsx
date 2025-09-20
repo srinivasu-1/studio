@@ -10,6 +10,7 @@ import {
   Heart,
   Home,
   Camera,
+  Share2,
 } from 'lucide-react';
 
 import {
@@ -54,6 +55,11 @@ const links = [
     label: 'Safety Info',
     icon: Shield,
   },
+  {
+    href: '/share',
+    label: 'Share App',
+    icon: Share2,
+  },
 ];
 
 export function MainNav() {
@@ -63,15 +69,18 @@ export function MainNav() {
     <SidebarMenu>
       {links.map((link) => (
         <SidebarMenuItem key={link.href}>
-          <Link href={link.href}>
+          <Link href={link.href} passHref>
             <SidebarMenuButton
+              asChild
               isActive={pathname === link.href}
               tooltip={link.label}
               size="lg"
               className="font-medium"
             >
-              <link.icon className="h-5 w-5" />
-              <span>{link.label}</span>
+              <div>
+                <link.icon className="h-5 w-5" />
+                <span>{link.label}</span>
+              </div>
             </SidebarMenuButton>
           </Link>
         </SidebarMenuItem>
