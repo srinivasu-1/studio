@@ -18,8 +18,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['Inter', ...fontFamily.sans],
-        headline: ['Playfair Display', 'serif'],
+        body: ['Poppins', ...fontFamily.sans],
+        headline: ['Lora', 'serif'],
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
       colors: {
