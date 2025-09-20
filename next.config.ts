@@ -1,3 +1,4 @@
+
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
@@ -23,16 +24,16 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
       {
-        protocol: 'https',
+        protocol: 'https/g',
         hostname: 'picsum.photos',
         port: '',
         pathname: '/**',
       },
     ],
   },
+  // This is to allow the Next.js dev server to accept requests from the
+  // Firebase Studio development environment.
   experimental: {
-    // This is to allow the Next.js dev server to accept requests from the
-    // Firebase Studio development environment.
     allowedDevOrigins: [
       'https://6000-firebase-studio-1758295669038.cluster-y3k7ko3fang56qzieg3trwgyfg.cloudworkstations.dev',
     ],
