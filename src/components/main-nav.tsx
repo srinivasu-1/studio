@@ -9,6 +9,7 @@ import {
   Shield,
   Heart,
   Home,
+  Camera,
 } from 'lucide-react';
 
 import {
@@ -20,13 +21,18 @@ import {
 const links = [
   {
     href: '/',
-    label: 'Recommendations',
+    label: 'Home',
     icon: Home,
   },
   {
     href: '/trips',
     label: 'My Trips',
     icon: Heart,
+  },
+  {
+    href: '/capture',
+    label: 'Capture',
+    icon: Camera,
   },
   {
     href: '/navigation',
