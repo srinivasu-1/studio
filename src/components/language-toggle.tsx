@@ -33,6 +33,9 @@ export function LanguageToggle() {
         <DropdownMenuItem>
           हिन्दी
         </DropdownMenuItem>
+        <DropdownMenuItem>
+          తెలుగు
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   )
