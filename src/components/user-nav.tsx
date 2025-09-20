@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { LogIn } from 'lucide-react';
 import { ThemeToggle } from './theme-toggle';
+import { LanguageToggle } from './language-toggle';
 
 export function UserNav() {
   // For now, we will assume the user is not logged in.
@@ -11,6 +12,7 @@ export function UserNav() {
   if (!isLoggedIn) {
     return (
       <div className="flex items-center gap-4">
+        <LanguageToggle />
         <ThemeToggle />
         <Button asChild>
           <Link href="/login">
@@ -26,6 +28,7 @@ export function UserNav() {
   // but can be used once authentication is implemented.
   return (
     <div className="flex items-center gap-4">
+        <LanguageToggle />
         <ThemeToggle />
     </div>
   );
