@@ -1,7 +1,5 @@
 'use server';
 
-import 'dotenv/config';
-
 import {
   recommendPlacesOfInterest,
   RecommendPlacesOfInterestInput,
