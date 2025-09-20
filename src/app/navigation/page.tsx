@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, MapPin } from 'lucide-react';
+import { ArrowRight, MapPin, Bed, Utensils } from 'lucide-react';
 
 export default function NavigationPage() {
   const [start, setStart] = useState('Mumbai');
@@ -23,11 +23,18 @@ export default function NavigationPage() {
     }
   };
 
+  const handleSearchNearby = (query: string) => {
+    if (end) {
+      const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query + ' near ' + end)}`;
+      window.open(googleMapsUrl, '_blank');
+    }
+  };
+
   return (
     <>
       <PageHeader
         title="Navigation Portal"
-        description="Find your way across India, online or offline."
+        description="Find your way and discover places to stay and eat."
       />
       <div className="mt-8 grid gap-8 lg:grid-cols-3">
         <div className="lg:col-span-1">
@@ -59,6 +66,17 @@ export default function NavigationPage() {
                             Get Directions
                             <ArrowRight className="ml-2" />
                         </Button>
+                        <div className="space-y-3 pt-4 border-t">
+                             <h4 className="text-lg font-semibold font-headline text-center">Find near your destination</h4>
+                             <div className="grid grid-cols-2 gap-3">
+                                <Button variant="outline" className="h-11" onClick={() => handleSearchNearby('motels')} disabled={!end}>
+                                    <Bed className="mr-2" /> Motels
+                                </Button>
+                                <Button variant="outline" className="h-11" onClick={() => handleSearchNearby('food courts')} disabled={!end}>
+                                    <Utensils className="mr-2" /> Food
+                                </Button>
+                             </div>
+                        </div>
                     </div>
                 </CardContent>
             </Card>
@@ -78,7 +96,7 @@ export default function NavigationPage() {
                     )}
                 </div>
                 <p className="mt-4 text-center text-muted-foreground">
-                    Enter a starting point and destination to get directions on Google Maps.
+                    Enter a starting point and destination to plan your trip.
                 </p>
                 </CardContent>
             </Card>
