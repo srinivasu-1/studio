@@ -9,10 +9,12 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, MapPin, Bed, Utensils } from 'lucide-react';
+import { useTranslation } from '@/hooks/use-translation';
 
 export default function NavigationPage() {
   const [start, setStart] = useState('Mumbai');
   const [end, setEnd] = useState('Delhi');
+  const { t } = useTranslation();
 
   const mapImage = PlaceHolderImages.find(p => p.id === 'navigation-map');
 
@@ -33,8 +35,8 @@ export default function NavigationPage() {
   return (
     <>
       <PageHeader
-        title="Navigation Portal"
-        description="Find your way and discover places to stay and eat."
+        title={t('pages.navigation.title')}
+        description={t('pages.navigation.description')}
       />
       <div className="mt-8 grid gap-8 lg:grid-cols-3">
         <div className="lg:col-span-1">

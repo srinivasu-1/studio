@@ -1,3 +1,6 @@
+
+'use client';
+
 import { PageHeader } from '@/components/page-header';
 import {
   Accordion,
@@ -7,6 +10,7 @@ import {
 } from "@/components/ui/accordion"
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Phone, ShieldAlert, HeartPulse } from 'lucide-react';
+import { useTranslation } from '@/hooks/use-translation';
 
 const safetyTips = [
   { title: "Research Your Destination", content: "Before you go, learn about local laws, customs, and any travel advisories for your destination." },
@@ -25,11 +29,12 @@ const emergencyContacts = [
 ]
 
 export default function SafetyPage() {
+  const { t } = useTranslation();
   return (
     <>
       <PageHeader
-        title="Safety Information"
-        description="Your guide to staying safe while you explore the world."
+        title={t('pages.safety.title')}
+        description={t('pages.safety.description')}
       />
       <div className="mt-8 grid gap-8 md:grid-cols-2">
         <Card className="shadow-lg">

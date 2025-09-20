@@ -1,3 +1,6 @@
+
+'use client';
+
 import { PageHeader } from '@/components/page-header';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -5,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Search, Bus, Car, Train } from 'lucide-react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { useTranslation } from '@/hooks/use-translation';
 
 const transportOptions = [
   { type: 'Bus', icon: Bus, details: 'Local routes and schedules.', imageId: 'transport-bus' },
@@ -13,11 +17,12 @@ const transportOptions = [
 ];
 
 export default function TransportPage() {
+  const { t } = useTranslation();
   return (
     <>
       <PageHeader
-        title="Transport Facility Finder"
-        description="Find local taxis, shuttles, buses, and more."
+        title={t('pages.transport.title')}
+        description={t('pages.transport.description')}
       />
       <div className="mt-8 space-y-8">
         <div className="relative">

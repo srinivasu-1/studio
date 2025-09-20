@@ -1,8 +1,12 @@
+
+'use client';
+
 import Image from 'next/image';
 import { PageHeader } from '@/components/page-header';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
+import { useTranslation } from '@/hooks/use-translation';
 
 const guides = [
   { id: 1, title: 'Guide to the Taj Mahal', description: 'Discover the history and beauty of the iconic symbol of love in Agra.', imageId: 'guide-taj-mahal' },
@@ -11,11 +15,12 @@ const guides = [
 ];
 
 export default function GuidesPage() {
+  const { t } = useTranslation();
   return (
     <>
       <PageHeader
-        title="Travel Guides"
-        description="Useful information about landmarks, culture, and local customs."
+        title={t('pages.guides.title')}
+        description={t('pages.guides.description')}
       />
       <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {guides.map((guide) => {

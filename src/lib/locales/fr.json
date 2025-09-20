@@ -15,5 +15,45 @@
             "description": "Créez un magnifique journal visuel de vos voyages. Téléchargez des photos et laissez notre IA raconter votre histoire.",
             "button": "Commencer à Capturer"
         }
+    },
+    "nav": {
+        "home": "Accueil",
+        "trips": "Mes Voyages",
+        "capture": "Capturer",
+        "navigation": "Navigation",
+        "transport": "Transport",
+        "guides": "Guides de Voyage",
+        "safety": "Infos de Sécurité",
+        "share": "Partager l'App"
+    },
+    "pages": {
+        "trips": {
+            "title": "Mes Voyages",
+            "description": "Planifiez et gérez vos prochaines aventures."
+        },
+        "capture": {
+            "title": "Capturez Votre Voyage",
+            "description": "Créez un magnifique journal visuel de vos voyages. Téléchargez une photo et laissez notre IA raconter votre histoire."
+        },
+        "navigation": {
+            "title": "Portail de Navigation",
+            "description": "Trouvez votre chemin et découvrez des lieux de séjour et de restauration."
+        },
+        "transport": {
+            "title": "Recherche de Transport",
+            "description": "Trouvez des taxis, navettes, bus locaux, et plus encore."
+        },
+        "guides": {
+            "title": "Guides de Voyage",
+            "description": "Informations utiles sur les sites touristiques, la culture et les coutumes locales."
+        },
+        "safety": {
+            "title": "Informations de Sécurité",
+            "description": "Votre guide pour rester en sécurité pendant que vous explorez le monde."
+        },
+        "share": {
+            "title": "Partager Trip Mate",
+            "description": "Partagez cette application avec vos amis et compagnons de voyage."
+        }
     }
 }

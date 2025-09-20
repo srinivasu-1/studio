@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -18,52 +19,54 @@ import {
   SidebarMenuItem,
   SidebarMenuButton,
 } from '@/components/ui/sidebar';
+import { useTranslation } from '@/hooks/use-translation';
 
 const links = [
   {
     href: '/',
-    label: 'Home',
+    labelKey: 'nav.home',
     icon: Home,
   },
   {
     href: '/trips',
-    label: 'My Trips',
+    labelKey: 'nav.trips',
     icon: Heart,
   },
   {
     href: '/capture',
-    label: 'Capture',
+    labelKey: 'nav.capture',
     icon: Camera,
   },
   {
     href: '/navigation',
-    label: 'Navigation',
+    labelKey: 'nav.navigation',
     icon: Map,
   },
   {
     href: '/transport',
-    label: 'Transport',
+    labelKey: 'nav.transport',
     icon: Bus,
   },
   {
     href: '/guides',
-    label: 'Travel Guides',
+    labelKey: 'nav.guides',
     icon: BookOpen,
   },
   {
     href: '/safety',
-    label: 'Safety Info',
+    labelKey: 'nav.safety',
     icon: Shield,
   },
   {
     href: '/share',
-    label: 'Share App',
+    labelKey: 'nav.share',
     icon: Share2,
   },
 ];
 
 export function MainNav() {
   const pathname = usePathname();
+  const { t } = useTranslation();
 
   return (
     <SidebarMenu>
@@ -73,13 +76,13 @@ export function MainNav() {
             <SidebarMenuButton
               asChild
               isActive={pathname === link.href}
-              tooltip={link.label}
+              tooltip={t(link.labelKey)}
               size="lg"
               className="font-medium"
             >
               <div>
                 <link.icon className="h-5 w-5" />
-                <span>{link.label}</span>
+                <span>{t(link.labelKey)}</span>
               </div>
             </SidebarMenuButton>
           </Link>

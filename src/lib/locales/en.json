@@ -15,5 +15,45 @@
             "description": "Create a beautiful visual diary of your travels. Upload photos and let our AI tell your story.",
             "button": "Start Capturing"
         }
+    },
+    "nav": {
+        "home": "Home",
+        "trips": "My Trips",
+        "capture": "Capture",
+        "navigation": "Navigation",
+        "transport": "Transport",
+        "guides": "Travel Guides",
+        "safety": "Safety Info",
+        "share": "Share App"
+    },
+    "pages": {
+        "trips": {
+            "title": "My Trips",
+            "description": "Plan and manage your upcoming adventures."
+        },
+        "capture": {
+            "title": "Capture Your Trip",
+            "description": "Create a visual diary of your travels. Upload a photo and let our AI tell your story."
+        },
+        "navigation": {
+            "title": "Navigation Portal",
+            "description": "Find your way and discover places to stay and eat."
+        },
+        "transport": {
+            "title": "Transport Facility Finder",
+            "description": "Find local taxis, shuttles, buses, and more."
+        },
+        "guides": {
+            "title": "Travel Guides",
+            "description": "Useful information about landmarks, culture, and local customs."
+        },
+        "safety": {
+            "title": "Safety Information",
+            "description": "Your guide to staying safe while you explore the world."
+        },
+        "share": {
+            "title": "Share Trip Mate",
+            "description": "Share this app with your friends and fellow travelers."
+        }
     }
 }

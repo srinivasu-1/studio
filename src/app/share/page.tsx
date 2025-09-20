@@ -10,10 +10,12 @@ import { Button } from '@/components/ui/button';
 import { Copy } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { Skeleton } from '@/components/ui/skeleton';
+import { useTranslation } from '@/hooks/use-translation';
 
 export default function SharePage() {
   const [url, setUrl] = useState('');
   const { toast } = useToast();
+  const { t } = useTranslation();
 
   useEffect(() => {
     setUrl(window.location.origin);
@@ -30,8 +32,8 @@ export default function SharePage() {
   return (
     <>
       <PageHeader
-        title="Share Trip Mate"
-        description="Share this app with your friends and fellow travelers."
+        title={t('pages.share.title')}
+        description={t('pages.share.description')}
       />
       <div className="mt-8 flex justify-center">
         <Card className="w-full max-w-md shadow-lg">

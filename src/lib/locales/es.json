@@ -15,5 +15,45 @@
             "description": "Crea un hermoso diario visual de tus viajes. Sube fotos y deja que nuestra IA cuente tu historia.",
             "button": "Empezar a Capturar"
         }
+    },
+    "nav": {
+        "home": "Inicio",
+        "trips": "Mis Viajes",
+        "capture": "Capturar",
+        "navigation": "Navegación",
+        "transport": "Transporte",
+        "guides": "Guías de Viaje",
+        "safety": "Información de Seguridad",
+        "share": "Compartir App"
+    },
+    "pages": {
+        "trips": {
+            "title": "Mis Viajes",
+            "description": "Planifica y gestiona tus próximas aventuras."
+        },
+        "capture": {
+            "title": "Captura tu Viaje",
+            "description": "Crea un hermoso diario visual de tus viajes. Sube una foto y deja que nuestra IA cuente tu historia."
+        },
+        "navigation": {
+            "title": "Portal de Navegación",
+            "description": "Encuentra tu camino y descubre lugares para alojarte y comer."
+        },
+        "transport": {
+            "title": "Buscador de Transportes",
+            "description": "Encuentra taxis locales, lanzaderas, autobuses y más."
+        },
+        "guides": {
+            "title": "Guías de Viaje",
+            "description": "Información útil sobre lugares de interés, cultura y costumbres locales."
+        },
+        "safety": {
+            "title": "Información de Seguridad",
+            "description": "Tu guía para mantenerte seguro mientras exploras el mundo."
+        },
+        "share": {
+            "title": "Compartir Trip Mate",
+            "description": "Comparte esta aplicación con tus amigos y compañeros de viaje."
+        }
     }
 }

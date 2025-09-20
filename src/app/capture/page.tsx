@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
@@ -11,6 +12,7 @@ import { Upload, Wand2, Loader2, Camera } from 'lucide-react';
 import Image from 'next/image';
 import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
 import { useToast } from '@/hooks/use-toast';
+import { useTranslation } from '@/hooks/use-translation';
 
 
 export default function CapturePage() {
@@ -24,6 +26,7 @@ export default function CapturePage() {
     const fileInputRef = useRef<HTMLInputElement>(null);
 
     const { toast } = useToast();
+    const { t } = useTranslation();
 
     useEffect(() => {
         const getCameraPermission = async () => {
@@ -91,8 +94,8 @@ export default function CapturePage() {
     return (
         <>
             <PageHeader
-                title="Capture Your Trip"
-                description="Create a visual diary of your travels. Upload a photo and let our AI tell your story."
+                title={t('pages.capture.title')}
+                description={t('pages.capture.description')}
             />
             <div className="mt-8 grid gap-8 lg:grid-cols-2">
                 <Card className="shadow-lg">

@@ -1,9 +1,13 @@
+
+'use client';
+
 import Image from 'next/image';
 import { PageHeader } from '@/components/page-header';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { PlusCircle } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { useTranslation } from '@/hooks/use-translation';
 
 const trips = [
   { id: 1, title: 'Golden Triangle Delight', dates: 'October 10 - October 17, 2024', imageId: 'trip-delhi-agra-jaipur' },
@@ -12,12 +16,13 @@ const trips = [
 ];
 
 export default function TripsPage() {
+  const { t } = useTranslation();
   return (
     <>
       <div className="flex items-center justify-between">
         <PageHeader
-          title="My Trips"
-          description="Plan and manage your upcoming adventures."
+          title={t('pages.trips.title')}
+          description={t('pages.trips.description')}
         />
         <Button variant="default" size="lg">
           <PlusCircle className="mr-2 h-4 w-4" />
