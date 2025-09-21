@@ -52,7 +52,7 @@ export default function TransportPage() {
                 <CardHeader className="flex flex-row items-center gap-4 pb-4">
                     <div className="bg-primary/10 p-0 rounded-xl w-16 h-16 flex items-center justify-center overflow-hidden">
                         {option.type === 'Bus' && placeholder ? (
-                            <Image src={placeholder.imageUrl} alt={option.type} width="64" height="64" className="object-cover w-full h-full" />
+                            <Image src={placeholder.imageUrl} alt={option.type} width="64" height="64" className="object-cover w-full h-full" data-ai-hint={placeholder.imageHint} />
                         ) : (
                             <option.icon className="h-7 w-7 text-primary" />
                         )}
