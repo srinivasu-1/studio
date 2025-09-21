@@ -45,8 +45,8 @@
     },
     {
       "id": "transport-bus",
-      "description": "A travel bus with a sunset background",
-      "imageUrl": "https://picsum.photos/seed/301/600/400",
+      "description": "A travel bus with a sunset and palm trees background",
+      "imageUrl": "https://picsum.photos/seed/travel-bus/600/400",
       "imageHint": "travel bus"
     },
     {
