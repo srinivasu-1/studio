@@ -1,5 +1,3 @@
-import 'dotenv/config';
-
 function getGeminiApiKey(): string {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
