@@ -45,20 +45,20 @@
     },
     {
       "id": "transport-bus",
-      "description": "A modern city bus on a street in India",
-      "imageUrl": "https://picsum.photos/seed/30/600/400",
-      "imageHint": "city bus"
+      "description": "A bus in motion on a city street",
+      "imageUrl": "https://picsum.photos/seed/300/600/400",
+      "imageHint": "moving bus"
     },
     {
       "id": "transport-taxi",
       "description": "A classic yellow and black taxi cab in Mumbai",
-      "imageUrl": "https://picsum.photos/seed/31/600/400",
+      "imageUrl": "https://picsum.photos/seed/131/600/400",
       "imageHint": "taxi cab"
     },
     {
       "id": "transport-train",
       "description": "An Indian Railways train at a station",
-      "imageUrl": "https://picsum.photos/seed/36/600/400",
+      "imageUrl": "https://picsum.photos/seed/136/600/400",
       "imageHint": "Indian train"
     },
     {
@@ -70,20 +70,21 @@
     {
       "id": "transport-uber",
       "description": "A car with a ridesharing app logo",
-      "imageUrl": "https://picsum.photos/seed/33/600/400",
+      "imageUrl": "https://picsum.photos/seed/133/600/400",
       "imageHint": "ridesharing car"
     },
     {
       "id": "transport-ola",
       "description": "A car with a local Indian ridesharing app logo",
-      "imageUrl": "https://picsum.photos/seed/34/600/400",
+      "imageUrl": "https://picsum.photos/seed/134/600/400",
       "imageHint": "ridesharing car"
     },
     {
       "id": "transport-rapido",
       "description": "A person riding a bike taxi in a bustling city",
-      "imageUrl": "https://picsum.photos/seed/35/600/400",
+      "imageUrl": "https://picsum.photos/seed/135/600/400",
       "imageHint": "bike taxi"
     }
   ]
 }
+
