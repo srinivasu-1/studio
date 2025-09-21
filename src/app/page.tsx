@@ -12,7 +12,7 @@ export default function Home() {
   const { t } = useTranslation();
   return (
     <div className="space-y-12">
-      <section className="relative flex flex-col items-center justify-center rounded-xl bg-card p-8 text-center md:min-h-[350px] overflow-hidden shadow-2xl">
+      <section className="relative flex flex-col items-center justify-center rounded-xl bg-card p-8 text-center md:min-h-[350px] overflow-hidden shadow-lg">
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-20" 
           style={{backgroundImage: "url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=2071&auto=format&fit=crop')"}}
