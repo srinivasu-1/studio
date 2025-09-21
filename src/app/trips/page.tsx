@@ -34,7 +34,7 @@ export default function TripsPage() {
         {trips.map((trip) => {
           const placeholder = PlaceHolderImages.find(p => p.id === trip.imageId);
           return (
-            <Card key={trip.id} className="overflow-hidden transition-shadow duration-300 hover:shadow-2xl hover:-translate-y-1">
+            <Card key={trip.id} className="overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
               <CardHeader className="p-0">
                 {placeholder && (
                   <div className="relative h-56 w-full">

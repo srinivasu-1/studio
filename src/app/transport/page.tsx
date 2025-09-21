@@ -46,7 +46,7 @@ export default function TransportPage() {
             return (
                 <Card 
                   key={option.type} 
-                  className="transition-shadow duration-300 hover:shadow-2xl hover:-translate-y-1 cursor-pointer"
+                  className="transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 cursor-pointer"
                   onClick={() => handleTransportSearch(option.query)}
                 >
                 <CardHeader className="flex flex-row items-center gap-4 pb-4">
