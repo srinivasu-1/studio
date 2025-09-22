@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { Upload, Wand2, Loader2, Camera } from 'lucide-react';
+import { Upload, Wand2, Loader2, Camera, RefreshCw } from 'lucide-react';
 import Image from 'next/image';
 import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
 import { useToast } from '@/hooks/use-toast';
@@ -21,30 +21,90 @@ export default function CapturePage() {
     const [story, setStory] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [hasCameraPermission, setHasCameraPermission] = useState<boolean | null>(null);
+    const [videoDevices, setVideoDevices] = useState<MediaDeviceInfo[]>([]);
+    const [currentDeviceIndex, setCurrentDeviceIndex] = useState(0);
+
     const videoRef = useRef<HTMLVideoElement>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const fileInputRef = useRef<HTMLInputElement>(null);
+    const streamRef = useRef<MediaStream | null>(null);
 
     const { toast } = useToast();
     const { t } = useTranslation();
 
     useEffect(() => {
-        const getCameraPermission = async () => {
-          try {
-            const stream = await navigator.mediaDevices.getUserMedia({video: true});
-            setHasCameraPermission(true);
-    
-            if (videoRef.current) {
-              videoRef.current.srcObject = stream;
+        const getDevicesAndStartStream = async () => {
+            try {
+                // First, get permission
+                const initialStream = await navigator.mediaDevices.getUserMedia({ video: true });
+                setHasCameraPermission(true);
+                // Stop the initial stream, we'll start a specific one next
+                initialStream.getTracks().forEach(track => track.stop());
+
+                // Now get the list of all video devices
+                const devices = await navigator.mediaDevices.enumerateDevices();
+                const videoInputDevices = devices.filter(device => device.kind === 'videoinput');
+                setVideoDevices(videoInputDevices);
+
+                if (videoInputDevices.length > 0) {
+                    startStream(videoInputDevices[currentDeviceIndex].deviceId);
+                } else {
+                    // Fallback to default if no specific devices found after permission
+                    startStream();
+                }
+
+            } catch (error) {
+                console.error('Error accessing camera:', error);
+                setHasCameraPermission(false);
             }
-          } catch (error) {
-            console.error('Error accessing camera:', error);
-            setHasCameraPermission(false);
-          }
         };
+
+        getDevicesAndStartStream();
+
+        // Cleanup on unmount
+        return () => {
+            if (streamRef.current) {
+                streamRef.current.getTracks().forEach(track => track.stop());
+            }
+        };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+
+    const startStream = async (deviceId?: string) => {
+        // Stop any existing stream
+        if (streamRef.current) {
+            streamRef.current.getTracks().forEach(track => track.stop());
+        }
+
+        const constraints = {
+            video: { 
+                deviceId: deviceId ? { exact: deviceId } : undefined 
+            }
+        };
+
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia(constraints);
+            streamRef.current = stream;
+            setHasCameraPermission(true);
+
+            if (videoRef.current) {
+                videoRef.current.srcObject = stream;
+            }
+        } catch (error) {
+            console.error('Error starting camera stream:', error);
+            setHasCameraPermission(false);
+        }
+    };
     
-        getCameraPermission();
-      }, []);
+    const handleSwitchCamera = () => {
+        if (videoDevices.length > 1) {
+            const nextDeviceIndex = (currentDeviceIndex + 1) % videoDevices.length;
+            setCurrentDeviceIndex(nextDeviceIndex);
+            startStream(videoDevices[nextDeviceIndex].deviceId);
+        }
+    };
+
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
@@ -139,10 +199,21 @@ export default function CapturePage() {
                                         </AlertDescription>
                                     </Alert>
                                 )}
-                                <Button onClick={handleTakePhoto} disabled={hasCameraPermission !== true} className="w-full mt-4">
-                                    <Camera className="mr-2" />
-                                    Take Photo
-                                </Button>
+                                <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <Button onClick={handleTakePhoto} disabled={hasCameraPermission !== true} className="w-full">
+                                        <Camera className="mr-2" />
+                                        Take Photo
+                                    </Button>
+                                    <Button 
+                                        onClick={handleSwitchCamera} 
+                                        disabled={hasCameraPermission !== true || videoDevices.length < 2}
+                                        variant="outline"
+                                        className="w-full"
+                                    >
+                                        <RefreshCw className="mr-2" />
+                                        Switch Camera
+                                    </Button>
+                                </div>
                                 <canvas ref={canvasRef} className="hidden"></canvas>
                             </div>
                         </div>
