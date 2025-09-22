@@ -15,8 +15,8 @@ export default function Home() {
       <section className="relative flex flex-col items-center justify-center rounded-xl bg-card p-8 text-center md:min-h-[350px] overflow-hidden shadow-lg">
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-20" 
-          style={{backgroundImage: "url('https://picsum.photos/seed/beach/1920/1080')"}}
-          data-ai-hint="sandy beach"
+          style={{backgroundImage: "url('https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=2073&auto=format&fit=crop')"}}
+          data-ai-hint="valley hike"
         ></div>
         <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
         <div className="relative z-10">
