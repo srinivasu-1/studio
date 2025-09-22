@@ -11,10 +11,12 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useState } from 'react';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
-import { signInWithEmailAndPassword, signUpWithEmailAndPassword, handleGoogleSignIn as clientGoogleSignIn } from '@/app/auth/actions';
+import { signInWithEmailAndPassword, signUpWithEmailAndPassword, createUserProfile } from '@/app/auth/actions';
 import { useToast } from '@/hooks/use-toast';
 import { useRouter } from 'next/navigation';
 import { Loader2 } from 'lucide-react';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { auth } from '@/lib/firebase';
 
 const loginSchema = z.object({
   email: z.string().email('Invalid email address.'),
@@ -63,8 +65,10 @@ export default function LoginPage() {
 
   const handleGoogleSignIn = async () => {
     setIsLoading(true);
+    const provider = new GoogleAuthProvider();
     try {
-        await clientGoogleSignIn();
+        const result = await signInWithPopup(auth, provider);
+        await createUserProfile(result.user);
         toast({ title: 'Google Sign-In Successful', description: 'Welcome!' });
         router.push('/');
         router.refresh();
