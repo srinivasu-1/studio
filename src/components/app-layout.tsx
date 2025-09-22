@@ -16,11 +16,13 @@ import { UserNav } from '@/components/user-nav';
 import React, { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { SplashScreen } from './splash-screen';
+import { useLayout } from '@/context/layout-context';
 
 export function AppLayout({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = React.useState(true);
   const [isAppLoading, setIsAppLoading] = useState(true);
   const pathname = usePathname();
+  const { isLogoVisible } = useLayout();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -66,9 +68,11 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
         <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b bg-background/80 px-4 backdrop-blur-sm sm:px-6">
           <div className="flex items-center gap-2">
             <SidebarTrigger />
-            <div className="hidden sm:block">
-              <AppLogo />
-            </div>
+            {isLogoVisible && (
+              <div className="hidden sm:block">
+                <AppLogo />
+              </div>
+            )}
           </div>
           <UserNav />
         </header>

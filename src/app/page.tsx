@@ -1,5 +1,6 @@
 
 'use client';
+import { useEffect } from 'react';
 import { PlaceRecommendation } from '@/components/place-recommendation';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -9,6 +10,7 @@ import { BookingPortal } from '@/components/booking-portal';
 import { useTranslation } from '@/hooks/use-translation';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { useLayout } from '@/context/layout-context';
 
 
 const popularTours = [
@@ -21,6 +23,13 @@ const popularTours = [
 
 export default function Home() {
   const { t } = useTranslation();
+  const { setLogoVisible } = useLayout();
+
+  useEffect(() => {
+    setLogoVisible(false);
+    // Reset on component unmount
+    return () => setLogoVisible(true);
+  }, [setLogoVisible]);
   
   const planTripImage = PlaceHolderImages.find(p => p.id === 'home-plan-trip');
   const captureTripImage = PlaceHolderImages.find(p => p.id === 'home-capture-trip');

@@ -6,6 +6,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/theme-provider';
 import { LanguageProvider } from '@/context/language-context';
 import { AuthProvider } from '@/context/auth-context';
+import { LayoutProvider } from '@/context/layout-context';
 
 export const metadata: Metadata = {
   title: 'Trip Mate',
@@ -27,17 +28,19 @@ export default function RootLayout({
       <body className="font-body antialiased">
         <AuthProvider>
             <LanguageProvider>
-            <ThemeProvider
-                attribute="class"
-                defaultTheme="system"
-                enableSystem
-                disableTransitionOnChange
-            >
-                <AppLayout>
-                {children}
-                </AppLayout>
-                <Toaster />
-            </ThemeProvider>
+              <LayoutProvider>
+                <ThemeProvider
+                    attribute="class"
+                    defaultTheme="system"
+                    enableSystem
+                    disableTransitionOnChange
+                >
+                    <AppLayout>
+                    {children}
+                    </AppLayout>
+                    <Toaster />
+                </ThemeProvider>
+              </LayoutProvider>
             </LanguageProvider>
         </AuthProvider>
       </body>
