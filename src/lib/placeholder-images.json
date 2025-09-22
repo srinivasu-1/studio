@@ -3,8 +3,8 @@
   "placeholderImages": [
     {
       "id": "hero-background",
-      "description": "A scenic view of a lush green forest.",
-      "imageUrl": "https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=2073&auto=format&fit=crop",
+      "description": "A scenic view of a lush green valley with hikers.",
+      "imageUrl": "https://images.unsplash.com/photo-1528181304800-259b08848526?q=80&w=2070&auto=format&fit=crop",
       "imageHint": "valley hike"
     },
     {
@@ -102,6 +102,18 @@
       "description": "A person riding a bike taxi in a bustling city",
       "imageUrl": "https://picsum.photos/seed/rapido/600/400",
       "imageHint": "bike taxi"
+    },
+    {
+      "id": "home-plan-trip",
+      "description": "A person looking at a map with mountains in the background",
+      "imageUrl": "https://images.unsplash.com/photo-1521295121783-8a321d551ad2?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "planning map"
+    },
+    {
+      "id": "home-capture-trip",
+      "description": "A person taking a photo of a scenic landscape with a smartphone",
+      "imageUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "taking photo"
     }
   ]
 }
