@@ -10,7 +10,7 @@
     {
       "id": "login-background",
       "description": "A path through a misty forest.",
-      "imageUrl": "https://picsum.photos/seed/forest/1920/1080",
+      "imageUrl": "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2070&auto=format&fit=crop",
       "imageHint": "lush forest"
     },
     {
@@ -102,24 +102,6 @@
       "description": "A person riding a bike taxi in a bustling city",
       "imageUrl": "https://picsum.photos/seed/rapido/600/400",
       "imageHint": "bike taxi"
-    },
-    {
-      "id": "carousel-lake",
-      "description": "A tranquil lake surrounded by mountains.",
-      "imageUrl": "https://picsum.photos/seed/lake/800/600",
-      "imageHint": "tranquil lake"
-    },
-    {
-      "id": "carousel-desert",
-      "description": "Sand dunes in a vast desert.",
-      "imageUrl": "https://picsum.photos/seed/desert/800/600",
-      "imageHint": "desert dunes"
-    },
-    {
-      "id": "carousel-city",
-      "description": "A vibrant city street at night.",
-      "imageUrl": "https://picsum.photos/seed/city/800/600",
-      "imageHint": "city night"
     }
   ]
 }

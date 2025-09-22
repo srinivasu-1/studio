@@ -30,14 +30,6 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { RecommendPlacesOfInterestOutput } from '@/ai/flows/recommend-places-of-interest';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const formSchema = z.object({
   currentLocation: z.string().min(1, 'Current location is required.'),
@@ -50,9 +42,6 @@ const formSchema = z.object({
 });
 
 type FormData = z.infer<typeof formSchema>;
-
-const carouselImages = PlaceHolderImages.filter(p => p.id.startsWith('carousel-'));
-
 
 export function PlaceRecommendation() {
   const [recommendations, setRecommendations] = useState<RecommendPlacesOfInterestOutput['recommendations'] | null>(null);
@@ -228,25 +217,15 @@ export function PlaceRecommendation() {
                 )}
                 {!isLoading && !recommendations && (
                     <div className="w-full h-full flex flex-col items-center justify-center">
-                      <Carousel className="w-full max-w-xs" opts={{loop: true}}>
-                        <CarouselContent>
-                          {carouselImages.map((image) => (
-                            <CarouselItem key={image.id}>
-                              <div className="p-1">
-                                <Card className="overflow-hidden">
-                                  <CardContent className="flex aspect-square items-center justify-center p-0 relative">
-                                    <Image src={image.imageUrl} alt={image.description} fill className="object-cover" data-ai-hint={image.imageHint} />
-                                    <div className="absolute inset-0 bg-black/20"></div>
-                                    <span className="relative text-2xl font-semibold text-white drop-shadow-lg">{image.description}</span>
-                                  </CardContent>
-                                </Card>
-                              </div>
-                            </CarouselItem>
-                          ))}
-                        </CarouselContent>
-                        <CarouselPrevious />
-                        <CarouselNext />
-                      </Carousel>
+                        <div className="relative w-full aspect-square max-w-sm">
+                            <Image 
+                                src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=2000&auto=format&fit=crop" 
+                                alt="Trip planning desk with a map" 
+                                fill 
+                                className="object-contain"
+                                data-ai-hint="planning trip"
+                            />
+                        </div>
                       <p className="mt-4 text-center text-muted-foreground">
                         Fill out the form and let our AI magic happen!
                       </p>
