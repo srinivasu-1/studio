@@ -8,7 +8,7 @@ import { LanguageProvider } from '@/context/language-context';
 import { AuthProvider } from '@/context/auth-context';
 
 export const metadata: Metadata = {
-  title: 'Trip Mate',
+  title: 'Wanderer',
   description: 'Your friendly travel companion.',
 };
 
