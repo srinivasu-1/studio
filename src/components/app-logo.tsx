@@ -1,15 +1,13 @@
+
 import { Logo } from '@/components/icons/logo';
 
 export function AppLogo() {
   return (
-    <div className="flex flex-col items-center gap-2">
-        <Logo className="h-28 w-28" />
-        <div className='text-center'>
-            <span className="text-5xl font-bold tracking-widest text-black dark:text-white">
-                TRIP MATE
-            </span>
-            <p className='mt-2 text-lg font-medium tracking-wider text-blue-800 dark:text-blue-200'>MAKE YOUR TRIP MEMORABLE</p>
-        </div>
+    <div className="flex items-center gap-4">
+        <Logo className="h-14 w-14" />
+        <span className="text-2xl font-bold tracking-tight text-foreground">
+            Trip Mate
+        </span>
     </div>
   );
 }

@@ -52,11 +52,9 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
     <SidebarProvider open={open} onOpenChange={setOpen}>
       <Sidebar>
         <SidebarHeader className="p-4">
-          <div className="flex items-center justify-between">
-            <Link href="/">
-              <AppLogo />
-            </Link>
-          </div>
+          <Link href="/">
+            <AppLogo />
+          </Link>
         </SidebarHeader>
         <SidebarContent>
           <MainNav />
@@ -68,7 +66,9 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
         <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b bg-background/80 px-4 backdrop-blur-sm sm:px-6">
           <div className="flex items-center gap-2">
             <SidebarTrigger />
-            <h1 className="text-xl font-semibold font-headline hidden sm:block">Trip Mate</h1>
+            <div className="hidden sm:block">
+              <AppLogo />
+            </div>
           </div>
           <UserNav />
         </header>
