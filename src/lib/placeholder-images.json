@@ -2,6 +2,18 @@
 {
   "placeholderImages": [
     {
+      "id": "hero-background",
+      "description": "A beautiful landscape in India, perhaps the Taj Mahal at sunrise or a scenic view of the Himalayas.",
+      "imageUrl": "https://picsum.photos/seed/hero-background/1920/1080",
+      "imageHint": "India landmark"
+    },
+    {
+      "id": "login-background",
+      "description": "A serene travel-related image, like a sunrise over mountains or a peaceful beach.",
+      "imageUrl": "https://picsum.photos/seed/login-background/1920/1080",
+      "imageHint": "sunrise mountains"
+    },
+    {
       "id": "trip-delhi-agra-jaipur",
       "description": "A collage of the India Gate, Taj Mahal, and Hawa Mahal",
       "imageUrl": "https://picsum.photos/seed/1/600/400",
@@ -45,20 +57,20 @@
     },
     {
       "id": "transport-bus",
-      "description": "A travel bus with a sunset and palm trees background",
-      "imageUrl": "https://picsum.photos/seed/travel-bus-logo/600/400",
+      "description": "A modern inter-city bus on a highway",
+      "imageUrl": "https://picsum.photos/seed/bus/600/400",
       "imageHint": "travel bus"
     },
     {
       "id": "transport-taxi",
       "description": "A classic yellow and black taxi cab in Mumbai",
-      "imageUrl": "https://picsum.photos/seed/new-taxi/600/400",
+      "imageUrl": "https://picsum.photos/seed/taxi/600/400",
       "imageHint": "taxi cab"
     },
     {
       "id": "transport-train",
       "description": "An Indian Railways train at a station",
-      "imageUrl": "https://picsum.photos/seed/new-train/600/400",
+      "imageUrl": "https://picsum.photos/seed/train/600/400",
       "imageHint": "Indian train"
     },
     {
@@ -70,19 +82,19 @@
     {
       "id": "transport-uber",
       "description": "A car with a ridesharing app logo",
-      "imageUrl": "https://picsum.photos/seed/new-uber/600/400",
+      "imageUrl": "https://picsum.photos/seed/uber/600/400",
       "imageHint": "ridesharing car"
     },
     {
       "id": "transport-ola",
       "description": "A car with a local Indian ridesharing app logo",
-      "imageUrl": "https://picsum.photos/seed/new-ola/600/400",
+      "imageUrl": "https://picsum.photos/seed/ola/600/400",
       "imageHint": "ridesharing car"
     },
     {
       "id": "transport-rapido",
       "description": "A person riding a bike taxi in a bustling city",
-      "imageUrl": "https://picsum.photos/seed/new-rapido/600/400",
+      "imageUrl": "https://picsum.photos/seed/rapido/600/400",
       "imageHint": "bike taxi"
     }
   ]
