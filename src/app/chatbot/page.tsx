@@ -58,8 +58,11 @@ export default function ChatbotPage() {
     form.reset();
 
     try {
+      // The history needs to include the new user message.
+      const historyForAI = newMessages.slice(0, -1);
+
       const result = await getChatReply({
-          history: messages.map(m => ({role: m.role, text: m.text})),
+          history: historyForAI.map(m => ({role: m.role, text: m.text})),
           message: values.message
       });
       const modelMessage: Message = { role: 'model', text: result.reply };
