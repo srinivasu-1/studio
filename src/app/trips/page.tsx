@@ -10,10 +10,10 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { useTranslation } from '@/hooks/use-translation';
 
 const trips = [
-  { id: 1, title: 'Golden Triangle Delight', dates: 'October 10 - October 17, 2024', imageId: 'trip-delhi-agra-jaipur', description: 'Explore the iconic cities of Delhi, Agra, and Jaipur.', price: '$1,200' },
-  { id: 2, title: 'Kerala Backwater Bliss', dates: 'November 5 - November 12, 2024', imageId: 'trip-kerala', description: 'Relax on a houseboat and enjoy the serene backwaters.', price: '$950' },
-  { id: 3, title: 'Himalayan Adventure', dates: 'March 20 - March 30, 2025', imageId: 'trip-himalayas', description: 'Trek through breathtaking mountain landscapes.', price: '$1,500' },
-  { id: 4, title: 'Forest Escape', dates: 'April 5 - April 10, 2025', imageId: 'trip-forest', description: 'Experience wildlife and nature in a dense forest reserve.', price: '$800' },
+  { id: 1, title: 'Golden Triangle Delight', dates: 'October 10 - October 17, 2024', imageId: 'trip-delhi-agra-jaipur', description: 'Explore the iconic cities of Delhi, Agra, and Jaipur.', price: '₹85,000' },
+  { id: 2, title: 'Kerala Backwater Bliss', dates: 'November 5 - November 12, 2024', imageId: 'trip-kerala', description: 'Relax on a houseboat and enjoy the serene backwaters.', price: '₹65,000' },
+  { id: 3, title: 'Himalayan Adventure', dates: 'March 20 - March 30, 2025', imageId: 'trip-himalayas', description: 'Trek through breathtaking mountain landscapes.', price: '₹95,000' },
+  { id: 4, title: 'Forest Escape', dates: 'April 5 - April 10, 2025', imageId: 'trip-forest', description: 'Experience wildlife and nature in a dense forest reserve.', price: '₹55,000' },
 ];
 
 export default function TripsPage() {
