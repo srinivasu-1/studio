@@ -13,12 +13,22 @@ import {
 import { MainNav } from '@/components/main-nav';
 import { AppLogo } from '@/components/app-logo';
 import { UserNav } from '@/components/user-nav';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+import { SplashScreen } from './splash-screen';
 
 export function AppLayout({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = React.useState(true);
+  const [isAppLoading, setIsAppLoading] = useState(true);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsAppLoading(false);
+    }, 2000); // Show splash screen for 2 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
 
   React.useEffect(() => {
     const cookieValue = document.cookie
@@ -29,6 +39,10 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
       setOpen(cookieValue === 'true');
     }
   }, []);
+  
+  if (isAppLoading) {
+    return <SplashScreen />;
+  }
 
   if (pathname === '/login') {
     return <main>{children}</main>;
