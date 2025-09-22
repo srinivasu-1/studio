@@ -51,8 +51,7 @@ export default function LoginPage() {
         await signInWithEmailAndPassword(values);
         toast({ title: 'Login Successful', description: 'Welcome back!' });
       } else {
-        const userCred = await signUpWithEmailAndPassword(values);
-        await createUserProfile(userCred.user);
+        await signUpWithEmailAndPassword(values);
         toast({ title: 'Sign Up Successful', description: 'Your account has been created.' });
       }
       router.push('/');
@@ -87,7 +86,7 @@ export default function LoginPage() {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background p-4">
-      <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{backgroundImage: 'url(https://picsum.photos/seed/login-background/1920/1080)'}} data-ai-hint='sunrise mountains'></div>
+      <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{backgroundImage: 'url(https://picsum.photos/seed/beach/1920/1080)'}} data-ai-hint='serene beach'></div>
       <div className="absolute inset-0 bg-background/80 backdrop-blur-sm"></div>
       <Card className="relative z-10 mx-auto w-full max-w-sm shadow-2xl">
         <CardHeader className="text-center">

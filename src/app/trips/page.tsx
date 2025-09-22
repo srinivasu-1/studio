@@ -13,6 +13,7 @@ const trips = [
   { id: 1, title: 'Golden Triangle Delight', dates: 'October 10 - October 17, 2024', imageId: 'trip-delhi-agra-jaipur' },
   { id: 2, title: 'Kerala Backwater Bliss', dates: 'November 5 - November 12, 2024', imageId: 'trip-kerala' },
   { id: 3, title: 'Himalayan Adventure', dates: 'March 20 - March 30, 2025', imageId: 'trip-himalayas' },
+  { id: 4, title: 'Forest Escape', dates: 'April 5 - April 10, 2025', imageId: 'trip-forest' },
 ];
 
 export default function TripsPage() {

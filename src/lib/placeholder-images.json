@@ -3,15 +3,15 @@
   "placeholderImages": [
     {
       "id": "hero-background",
-      "description": "A beautiful landscape in India, perhaps the Taj Mahal at sunrise or a scenic view of the Himalayas.",
-      "imageUrl": "https://picsum.photos/seed/hero-background/1920/1080",
-      "imageHint": "India landmark"
+      "description": "A scenic view of lush green mountains in India.",
+      "imageUrl": "https://picsum.photos/seed/mountains/1920/1080",
+      "imageHint": "green mountains"
     },
     {
       "id": "login-background",
-      "description": "A serene travel-related image, like a sunrise over mountains or a peaceful beach.",
-      "imageUrl": "https://picsum.photos/seed/login-background/1920/1080",
-      "imageHint": "sunrise mountains"
+      "description": "A serene and beautiful beach with calm waves.",
+      "imageUrl": "https://picsum.photos/seed/beach/1920/1080",
+      "imageHint": "serene beach"
     },
     {
       "id": "trip-delhi-agra-jaipur",
@@ -28,8 +28,14 @@
     {
       "id": "trip-himalayas",
       "description": "Snow-capped Himalayan mountains with a trekking path",
-      "imageUrl": "https://picsum.photos/seed/3/600/400",
+      "imageUrl": "https://picsum.photos/seed/himalayas/600/400",
       "imageHint": "Himalayan mountains"
+    },
+    {
+      "id": "trip-forest",
+      "description": "A dense, green forest with sunlight filtering through the trees.",
+      "imageUrl": "https://picsum.photos/seed/forest/600/400",
+      "imageHint": "dense forest"
     },
     {
       "id": "guide-taj-mahal",
