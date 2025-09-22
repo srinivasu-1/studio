@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
@@ -58,7 +59,7 @@ export default function ChatbotPage() {
 
     try {
       const result = await getChatReply({
-          history: messages,
+          history: messages.map(m => ({role: m.role, text: m.text})),
           message: values.message
       });
       const modelMessage: Message = { role: 'model', text: result.reply };
