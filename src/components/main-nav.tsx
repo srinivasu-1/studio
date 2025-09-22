@@ -12,6 +12,7 @@ import {
   Home,
   Camera,
   Share2,
+  MessageCircle,
 } from 'lucide-react';
 
 import {
@@ -37,6 +38,11 @@ const links = [
     href: '/capture',
     labelKey: 'nav.capture',
     icon: Camera,
+  },
+  {
+    href: '/chatbot',
+    labelKey: 'nav.chatbot',
+    icon: MessageCircle,
   },
   {
     href: '/navigation',

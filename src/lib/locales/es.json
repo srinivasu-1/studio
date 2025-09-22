@@ -20,6 +20,7 @@
         "home": "Inicio",
         "trips": "Mis Viajes",
         "capture": "Capturar",
+        "chatbot": "Chatbot",
         "navigation": "Navegación",
         "transport": "Transporte",
         "guides": "Guías de Viaje",
@@ -34,6 +35,10 @@
         "capture": {
             "title": "Captura tu Viaje",
             "description": "Crea un hermoso diario visual de tus viajes. Sube una foto y deja que nuestra IA cuente tu historia."
+        },
+        "chatbot": {
+            "title": "Chatbot de IA",
+            "description": "Tu asistente de viaje personal para la India."
         },
         "navigation": {
             "title": "Portal de Navegación",

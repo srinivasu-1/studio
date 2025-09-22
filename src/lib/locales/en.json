@@ -20,6 +20,7 @@
         "home": "Home",
         "trips": "My Trips",
         "capture": "Capture",
+        "chatbot": "Chatbot",
         "navigation": "Navigation",
         "transport": "Transport",
         "guides": "Travel Guides",
@@ -34,6 +35,10 @@
         "capture": {
             "title": "Capture Your Trip",
             "description": "Create a visual diary of your travels. Upload a photo and let our AI tell your story."
+        },
+        "chatbot": {
+            "title": "AI Chatbot",
+            "description": "Your personal travel assistant for India."
         },
         "navigation": {
             "title": "Navigation Portal",
