@@ -16,14 +16,13 @@
     --secondary-foreground: 215 30% 25%;
     --muted: 210 40% 93%;
     --muted-foreground: 215 30% 55%;
-    --accent: 210 40% 94%;
+    --accent: 210 40% 98%;
     --accent-foreground: 215 30% 25%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 210 40% 90%;
     --input: 210 40% 90%;
     --ring: 215 30% 25%;
-    --radius: 0.75rem;
     --chart-1: 210 70% 50%;
     --chart-2: 205 60% 60%;
     --chart-3: 215 65% 55%;
