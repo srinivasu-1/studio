@@ -4,14 +4,14 @@
     {
       "id": "hero-background",
       "description": "A scenic view of a lush green forest.",
-      "imageUrl": "https://picsum.photos/seed/forest/1920/1080",
-      "imageHint": "lush forest"
+      "imageUrl": "https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=2073&auto=format&fit=crop",
+      "imageHint": "valley hike"
     },
     {
       "id": "login-background",
       "description": "A path through a misty forest.",
-      "imageUrl": "https://picsum.photos/seed/forest2/1920/1080",
-      "imageHint": "misty forest"
+      "imageUrl": "https://picsum.photos/seed/forest/1920/1080",
+      "imageHint": "lush forest"
     },
     {
       "id": "trip-delhi-agra-jaipur",
@@ -34,7 +34,7 @@
     {
       "id": "trip-forest",
       "description": "A dense, green forest with sunlight filtering through the trees.",
-      "imageUrl": "https://picsum.photos/seed/forest/600/400",
+      "imageUrl": "https://picsum.photos/seed/trip-forest/600/400",
       "imageHint": "dense forest"
     },
     {
@@ -102,6 +102,24 @@
       "description": "A person riding a bike taxi in a bustling city",
       "imageUrl": "https://picsum.photos/seed/rapido/600/400",
       "imageHint": "bike taxi"
+    },
+    {
+      "id": "carousel-lake",
+      "description": "A tranquil lake surrounded by mountains.",
+      "imageUrl": "https://picsum.photos/seed/lake/800/600",
+      "imageHint": "tranquil lake"
+    },
+    {
+      "id": "carousel-desert",
+      "description": "Sand dunes in a vast desert.",
+      "imageUrl": "https://picsum.photos/seed/desert/800/600",
+      "imageHint": "desert dunes"
+    },
+    {
+      "id": "carousel-city",
+      "description": "A vibrant city street at night.",
+      "imageUrl": "https://picsum.photos/seed/city/800/600",
+      "imageHint": "city night"
     }
   ]
 }

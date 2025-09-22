@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -5,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Wand2, Loader2,Sparkles } from 'lucide-react';
+import Image from 'next/image';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -28,6 +30,14 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { RecommendPlacesOfInterestOutput } from '@/ai/flows/recommend-places-of-interest';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const formSchema = z.object({
   currentLocation: z.string().min(1, 'Current location is required.'),
@@ -40,6 +50,9 @@ const formSchema = z.object({
 });
 
 type FormData = z.infer<typeof formSchema>;
+
+const carouselImages = PlaceHolderImages.filter(p => p.id.startsWith('carousel-'));
+
 
 export function PlaceRecommendation() {
   const [recommendations, setRecommendations] = useState<RecommendPlacesOfInterestOutput['recommendations'] | null>(null);
@@ -214,12 +227,29 @@ export function PlaceRecommendation() {
                     </div>
                 )}
                 {!isLoading && !recommendations && (
-                    <div className="flex h-full w-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-muted-foreground/30 p-8 text-center text-muted-foreground">
-                    <Wand2 className="mb-4 h-16 w-16 text-primary" />
-                    <p className='text-xl font-medium'>Your recommendations will appear here.</p>
-                    <p className="text-base mt-2">
+                    <div className="w-full h-full flex flex-col items-center justify-center">
+                      <Carousel className="w-full max-w-xs" opts={{loop: true}}>
+                        <CarouselContent>
+                          {carouselImages.map((image) => (
+                            <CarouselItem key={image.id}>
+                              <div className="p-1">
+                                <Card className="overflow-hidden">
+                                  <CardContent className="flex aspect-square items-center justify-center p-0 relative">
+                                    <Image src={image.imageUrl} alt={image.description} fill className="object-cover" data-ai-hint={image.imageHint} />
+                                    <div className="absolute inset-0 bg-black/20"></div>
+                                    <span className="relative text-2xl font-semibold text-white drop-shadow-lg">{image.description}</span>
+                                  </CardContent>
+                                </Card>
+                              </div>
+                            </CarouselItem>
+                          ))}
+                        </CarouselContent>
+                        <CarouselPrevious />
+                        <CarouselNext />
+                      </Carousel>
+                      <p className="mt-4 text-center text-muted-foreground">
                         Fill out the form and let our AI magic happen!
-                    </p>
+                      </p>
                     </div>
                 )}
                 </div>
