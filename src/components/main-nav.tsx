@@ -18,6 +18,7 @@ import {
   SidebarMenu,
   SidebarMenuItem,
   SidebarMenuButton,
+  useSidebar,
 } from '@/components/ui/sidebar';
 import { useTranslation } from '@/hooks/use-translation';
 
@@ -67,12 +68,19 @@ const links = [
 export function MainNav() {
   const pathname = usePathname();
   const { t } = useTranslation();
+  const { setOpenMobile, isMobile } = useSidebar();
+
+  const handleLinkClick = () => {
+    if (isMobile) {
+      setOpenMobile(false);
+    }
+  };
 
   return (
     <SidebarMenu>
       {links.map((link) => (
         <SidebarMenuItem key={link.href}>
-          <Link href={link.href} passHref>
+          <Link href={link.href} passHref onClick={handleLinkClick}>
             <SidebarMenuButton
               asChild
               isActive={pathname === link.href}
