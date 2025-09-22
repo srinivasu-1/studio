@@ -49,20 +49,6 @@ export async function signInWithEmailAndPassword({ email, password }: Record<str
   }
 }
 
-// Sign in with Google
-export async function signInWithGoogle() {
-  const provider = new GoogleAuthProvider();
-  try {
-    // This part must run on the client, so we throw an error to guide client-side implementation.
-    // In a real app, this server action would coordinate with the client.
-    // For this prototype, we'll call the client-side Firebase methods directly from the login page.
-    // This is a placeholder to show intent. The actual logic is in the login page.
-    throw new Error("Google Sign-In must be initiated from the client.");
-  } catch (error: any) {
-     throw new Error(error.message);
-  }
-}
-
 // This function needs to be called from the client to trigger the popup
 export async function handleGoogleSignIn() {
     if (typeof window === 'undefined') {

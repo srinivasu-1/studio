@@ -11,7 +11,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useState } from 'react';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
-import { signInWithEmailAndPassword, signUpWithEmailAndPassword, signInWithGoogle } from '@/app/auth/actions';
+import { signInWithEmailAndPassword, signUpWithEmailAndPassword, handleGoogleSignIn as clientGoogleSignIn } from '@/app/auth/actions';
 import { useToast } from '@/hooks/use-toast';
 import { useRouter } from 'next/navigation';
 import { Loader2 } from 'lucide-react';
@@ -64,7 +64,7 @@ export default function LoginPage() {
   const handleGoogleSignIn = async () => {
     setIsLoading(true);
     try {
-        await signInWithGoogle();
+        await clientGoogleSignIn();
         toast({ title: 'Google Sign-In Successful', description: 'Welcome!' });
         router.push('/');
         router.refresh();
