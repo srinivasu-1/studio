@@ -3,15 +3,15 @@
   "placeholderImages": [
     {
       "id": "hero-background",
-      "description": "A scenic view of lush green mountains in India.",
-      "imageUrl": "https://picsum.photos/seed/mountains/1920/1080",
-      "imageHint": "green mountains"
+      "description": "A scenic view of a lush green forest.",
+      "imageUrl": "https://picsum.photos/seed/forest/1920/1080",
+      "imageHint": "lush forest"
     },
     {
       "id": "login-background",
-      "description": "A serene and beautiful beach with calm waves.",
-      "imageUrl": "https://picsum.photos/seed/beach/1920/1080",
-      "imageHint": "serene beach"
+      "description": "A path through a misty forest.",
+      "imageUrl": "https://picsum.photos/seed/forest2/1920/1080",
+      "imageHint": "misty forest"
     },
     {
       "id": "trip-delhi-agra-jaipur",

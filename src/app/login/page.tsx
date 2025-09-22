@@ -86,7 +86,7 @@ export default function LoginPage() {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background p-4">
-      <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{backgroundImage: 'url(https://picsum.photos/seed/beach/1920/1080)'}} data-ai-hint='serene beach'></div>
+      <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{backgroundImage: 'url(https://picsum.photos/seed/forest/1920/1080)'}} data-ai-hint='lush forest'></div>
       <div className="absolute inset-0 bg-background/80 backdrop-blur-sm"></div>
       <Card className="relative z-10 mx-auto w-full max-w-sm shadow-2xl">
         <CardHeader className="text-center">
